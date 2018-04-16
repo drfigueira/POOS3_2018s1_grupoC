@@ -12,7 +12,7 @@ public class UserSystem extends User {
     private long inicioBloqueio = 0;
     private Date horaBloqueio = null;
     private boolean online;//TRUE = ESTÁ ONLINE || FALSE = NÃO ESTÁ ONLINE;
-    private String senha;
+    //private String senha;
     private int contTentativaAcesso;
 
 
@@ -25,7 +25,8 @@ public class UserSystem extends User {
      */
     public UserSystem(String email, String senha) {
         super(email, senha);
-        this.senha = senha;
+        //this.senha = senha;
+        online = false;
         contTentativaAcesso = 0;
     }
 
@@ -50,13 +51,14 @@ public class UserSystem extends User {
      * @return
      */
     protected boolean onBlock(){
+        boolean retorno = false;
         long horaAtualEmMilisegundos = System.currentTimeMillis();
         if((horaAtualEmMilisegundos - inicioBloqueio) > 7200000){ //7200000 milisegundos == 2 horas
             horaBloqueio = null;
             inicioBloqueio = 0;
-            return true;
+            retorno = true;
         }
-        return false;
+        return retorno;
     }
 
     /**
@@ -68,14 +70,24 @@ public class UserSystem extends User {
      * @return
      */
     public int verificaAcesso(String senha){
+        int retorno = USUARIO_BLOQUEADO;
         if(onBlock()){
             if(!getSenha().verificarSenha(senha)){
                 contTentativaAcesso+=1;
                 block();
-                return SENHA_INVALIDA;
+                retorno = SENHA_INVALIDA;
             }
-            return ACESSO_COM_SUCESSO;
+            retorno = ACESSO_COM_SUCESSO;
         }
-        return USUARIO_BLOQUEADO;
+        return retorno;
     }
+
+    public void setOnline(boolean status) {
+        online = status;
+    }
+
+    public boolean isOnline() {
+        return online;
+    }
+
 }
