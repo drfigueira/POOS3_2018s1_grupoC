@@ -42,6 +42,10 @@ public abstract class User {
         }
     }
 
+    public Password getSenha() {
+        return senha;
+    }
+
     @Override
     public String toString() {
         return this.email;
