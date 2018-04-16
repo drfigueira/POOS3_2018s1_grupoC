@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException;
  * Classe que encapsula as fun&ccedil;&otilde;es de encripta&ccedil;&atilde;o e valida&ccedil;&atilde;o de senhas.
  */
 public class Password {
-    private String senha;
+    private byte[] senha;
 
     /**
      * Construtor base da classe, recebe a palavra que ser&aacute; utilizada como senha.
@@ -18,7 +18,7 @@ public class Password {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             md.update(senha.getBytes());
-            this.senha = md.digest().toString();
+            this.senha = md.digest();
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
@@ -35,7 +35,13 @@ public class Password {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             md.update(senha.getBytes());
-            retorno = this.senha.equals(md.digest().toString());
+            
+	    byte[] palpite = md.digest();
+
+	    retorno = this.senha.length == palpite.length;
+	    for(int i = 0; i < this.senha.length && retorno; i++) {
+	        retorno = this.senha[i] == palpite[i];
+	    }
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
