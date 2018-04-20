@@ -76,9 +76,11 @@ public class UserSystem extends User {
                 contTentativaAcesso+=1;
                 block();
                 retorno = SENHA_INVALIDA;
+            }else{
+                contTentativaAcesso = 0;//zerando atributo cont pois o acesso foi com sucesso
+                retorno = ACESSO_COM_SUCESSO;
             }
-            contTentativaAcesso = 0;//zerando atributo cont pois o acesso foi com sucesso
-            retorno = ACESSO_COM_SUCESSO;
+
         }
         return retorno;
     }
