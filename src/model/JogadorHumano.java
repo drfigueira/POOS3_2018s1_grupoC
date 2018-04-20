@@ -29,11 +29,11 @@ public class JogadorHumano extends User implements Jogador {
 
     @Override
     public void venceu() {
-
+        contJogoVenceu++;
     }
 
     @Override
     public void perdeu() {
-
+        contJogoPerdeu++;
     }
 }
