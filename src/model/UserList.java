@@ -1,6 +1,6 @@
 package model;
 
-class UserList {
+public class UserList {
     private static int LIMITE = 10;
 
     private UserSystem[] usuarios;
