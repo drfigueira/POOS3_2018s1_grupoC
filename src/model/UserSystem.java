@@ -12,7 +12,6 @@ public class UserSystem extends User {
     private long inicioBloqueio = 0;
     private Date horaBloqueio = null;
     private boolean online;//TRUE = ESTÁ ONLINE || FALSE = NÃO ESTÁ ONLINE;
-    //private String senha;
     private int contTentativaAcesso;
 
 

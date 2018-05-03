@@ -3,9 +3,9 @@ package model;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class UserListTest {
     private UserList list;
 
@@ -24,15 +24,43 @@ class UserListTest {
     }
 
     @Test
-    void getUsuario() {
-
+    void addUsuarioNulo() {
+        Assertions.assertFalse(list.addUsuario(null));
     }
 
     @Test
-    void loginUsuario() {
+    void getUsuarioComEmailValido() {
+        UserSystem u = new UserSystem("primeiro@usuario.com", "");
+        Assertions.assertEquals(u, list.getUsuario("primeiro@usuario.com"));
     }
 
     @Test
-    void getAt() {
+    void getUsuarioComEmailInvalido() {
+        Assertions.assertNull(list.getUsuario(""));
     }
+
+    @Test
+    void getAtComIndexValido() {
+        UserSystem u = new UserSystem("terceiro@usuario.com", "");
+        Assertions.assertEquals(u, list.getAt(2));
+    }
+
+    @Test
+    void getAtComIndexInvalido() {
+        Assertions.assertNull(list.getAt(10));
+    }
+
+    @Test
+    void loginUsuarioValidoCorretamente() {
+        Assertions.assertTrue(list.loginUsuario("segundo@usuario.com", "senha2"));
+    }
+
+    @Test
+    void loginUsuarioValidoIncorretamente3VezesEDepoisLogarCorretamente() {
+        Assertions.assertFalse(list.loginUsuario("segundo@usuario.com", "senha"));
+        Assertions.assertFalse(list.loginUsuario("segundo@usuario.com", "senha"));
+        Assertions.assertFalse(list.loginUsuario("segundo@usuario.com", "senha"));
+        Assertions.assertFalse(list.loginUsuario("segundo@usuario.com", "senha2"));
+    }
+
 }
