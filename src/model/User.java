@@ -32,6 +32,12 @@ public abstract class User {
     }
 
     /**
+     * Recupera o email do User.
+     * @return Uma String contendo o email do usuario.
+     */
+    public String getEmail() { return this.email; }
+
+    /**
      * Permite alterar a senha do usu&aacute;rio. A altera&ccedil;&atilde;o poder&aacute; ser feita se, e somente se, o email inserido estiver correto.
      * @param email  Uma String contendo o email do usu&aacute;rio.
      * @param senha Uma String que construir&aacute; a nova senha do usu&aacute;rio.
@@ -49,5 +55,16 @@ public abstract class User {
     @Override
     public String toString() {
         return this.email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        boolean retorno = false;
+        if(o != null) {
+            if (o instanceof User) {
+                retorno = ((User) o).getEmail().equals(this.email);
+            }
+        }
+        return retorno;
     }
 }

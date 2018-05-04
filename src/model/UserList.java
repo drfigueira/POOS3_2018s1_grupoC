@@ -1,6 +1,6 @@
 package model;
 
-class UserList {
+public class UserList {
     private static int LIMITE = 10;
 
     private UserSystem[] usuarios;
@@ -21,10 +21,12 @@ class UserList {
      */
     public boolean addUsuario(UserSystem user) {
         boolean deuCerto = false;
-        if (this.qtdUsuarios < LIMITE && !contaisEmail(user.toString())) {
-            usuarios[this.qtdUsuarios] = user;
-            this.qtdUsuarios++;
-            deuCerto = true;
+        if(user != null) {
+            if (this.qtdUsuarios < LIMITE && !containsEmail(user.toString())) {
+                usuarios[this.qtdUsuarios] = user;
+                this.qtdUsuarios++;
+                deuCerto = true;
+            }
         }
         return deuCerto;
     }
@@ -34,7 +36,7 @@ class UserList {
      * @param email String
      * @return true se email já estiver cadastrado, caso não, retorna false.
      */
-    private boolean contaisEmail(String email) {
+    private boolean containsEmail(String email) {
         boolean existe = false;
         int i = 0;
         while(i < this.qtdUsuarios && !existe) {
