@@ -1,14 +1,15 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Conjunto {
     public static int LIMITE = 7;
-    private ArrayList<Pedra> conjunto;
+    private List<Pedra> conjunto;
 
     public Conjunto() {
-        conjunto = new ArrayList<>();
+        conjunto = new LinkedList<>();
         criaPedras();
         embaralharPedras();
     }
