@@ -78,6 +78,7 @@ public class UserSystem extends User {
             }else{
                 contTentativaAcesso = 0;//zerando atributo cont pois o acesso foi com sucesso
                 retorno = ACESSO_COM_SUCESSO;
+                setOnline(true);
             }
 
         }

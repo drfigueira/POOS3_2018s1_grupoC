@@ -2,6 +2,10 @@ package model;
 
 public class UserList {
     private static int LIMITE = 10;
+    public static final int LOGIN_INVALIDO = 0;
+    public static final int USUARIO_BLOQUEADO = 1;
+    public static final int SENHA_INVALIDA = 2;
+    public static final int ACESSO_COM_SUCESSO = 3;
 
     private UserSystem[] usuarios;
     private int qtdUsuarios;
@@ -71,19 +75,16 @@ public class UserList {
      * @param senha Uma string contendo a senha
      * @return
      */
-    public boolean loginUsuario(String email, String senha) {
-        boolean deuCerto = false;
+    public int logonUsuario(String email, String senha) {
+        int retorno = LOGIN_INVALIDO;
         int i = 0;
-        while(i < this.qtdUsuarios && !deuCerto) {
+        while(i < this.qtdUsuarios && retorno == LOGIN_INVALIDO) {
             if(usuarios[i].toString().equals(email) && !usuarios[i].isOnline()) {
-                if(usuarios[i].getSenha().verificarSenha(senha)) {
-                    usuarios[i].setOnline(true);
-                    deuCerto = true;
-                }
+                retorno = usuarios[i].verificaAcesso(senha);
             }
             i++;
         }
-        return deuCerto;
+        return retorno;
     }
 
     /**
