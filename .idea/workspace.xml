@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77fd9d2a-ebfd-429e-8591-a31b44280939" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/model/Conjunto.java" afterPath="$PROJECT_DIR$/src/model/Conjunto.java" />
-    </list>
+    <list default="true" id="77fd9d2a-ebfd-429e-8591-a31b44280939" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mesa.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Mesa.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Mesa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
+            <state relative-caret-position="171">
               <caret line="38" column="44" lean-forward="false" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -87,7 +84,7 @@
       <file leaf-file-name="UserList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/UserList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
+            <state relative-caret-position="291">
               <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
               <folding>
                 <marker date="1525490835010" expanded="true" signature="2644:2715" ph="{...}" />
@@ -99,7 +96,7 @@
       <file leaf-file-name="UserListTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/model/UserListTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
+            <state relative-caret-position="456">
               <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -108,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserSystem.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserSystem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/UserSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
+            <state relative-caret-position="967">
               <caret line="80" column="30" lean-forward="false" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
               <folding>
                 <element signature="e#3217#3218#0" expanded="true" />
@@ -926,27 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/UserSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="80" column="30" lean-forward="false" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
-          <folding>
-            <element signature="e#3217#3218#0" expanded="true" />
-            <element signature="e#3246#3247#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/model/UserListTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -972,16 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/UserList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
-          <folding>
-            <marker date="1525490835010" expanded="true" signature="2644:2715" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Conjunto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="501">
@@ -1000,7 +966,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Mesa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
+        <state relative-caret-position="171">
           <caret line="38" column="44" lean-forward="false" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1014,6 +980,37 @@
             <element signature="e#1643#1644#0" expanded="true" />
             <element signature="e#1679#1680#0" expanded="true" />
             <element signature="e#1714#1715#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/UserList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
+          <folding>
+            <marker date="1525490835010" expanded="true" signature="2644:2715" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/model/UserListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/UserSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="967">
+          <caret line="80" column="30" lean-forward="false" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
+          <folding>
+            <element signature="e#3217#3218#0" expanded="true" />
+            <element signature="e#3246#3247#0" expanded="true" />
           </folding>
         </state>
       </provider>
