@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Conjunto {
-    public static int LIMITE = 7;
+    private static int LIMITE = 7;
     private List<Pedra> conjunto;
 
     public Conjunto() {
@@ -37,6 +37,10 @@ public class Conjunto {
 
     public int getSize() {
         return conjunto.size();
+    }
+
+    public boolean isEmpty() {
+        return conjunto.size() == 0;
     }
 
 }
