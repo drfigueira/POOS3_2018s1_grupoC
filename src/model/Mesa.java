@@ -8,53 +8,96 @@ public class Mesa {
     private int pontaEsquerda;
     private int pontaDireita;
 
+    /**
+     * Construtor da classe Mesa, onde as pedras serão jogadas conforme regra do jogo
+     */
     public Mesa() {
         carreira = new LinkedList<Pedra>();
     }
 
-    public boolean addPedra(Pedra p) {
+    /**
+     * Adiciona pedra na ponta esquerda da carreira
+     * @param p Pedra
+     * @return boolean
+     */
+    public boolean addPedraLeft(Pedra p) {
         boolean retorno = false;
         if(p != null) {
-            if(carreira.size() != 0) {
+            if(!carreira.isEmpty()) {
                 if(p.getLeft() == getPontaEsquerda()) {
+                    p.virarPedra();
                     carreira.add(p);
-                    setPontaEsqueda(p.getRight());
+                    setPontaEsqueda();
                     retorno = true;
                 }else if(p.getRight() == getPontaEsquerda()) {
                     carreira.add(p);
-                    setPontaEsqueda(p.getLeft());
-                    retorno = true;
-                }else if(p.getLeft() == getPontaDireita()) {
-                    carreira.add(carreira.size(), p);
-                    setPontaDireita(p.getRight());
-                    retorno = true;
-                }else if(p.getRight() == getPontaDireita()) {
-                    carreira.add(carreira.size(), p);
-                    setPontaDireita(p.getLeft());
+                    setPontaEsqueda();
                     retorno = true;
                 }
             }else {
                 carreira.add(p);
-                setPontaEsqueda(p.getLeft());
-                setPontaDireita(p.getRight());
+                setPontaEsqueda();
+                setPontaDireita();
                 retorno = true;
             }
         }
         return retorno;
     }
 
-    private void setPontaEsqueda(int n) {
-        this.pontaEsquerda = n;
+    /**
+     * Adiciona pedra na ponta direita da carreira
+     * @param p Pedra
+     * @return boolean
+     */
+    public boolean addPedraRight(Pedra p) {
+        boolean retorno = false;
+        if(p != null) {
+            if(!carreira.isEmpty()) {
+                if(p.getLeft() == getPontaDireita()) {
+                    carreira.add(p);
+                    setPontaDireita();
+                    retorno = true;
+                }else if(p.getRight() == getPontaDireita()) {
+                    p.virarPedra();
+                    carreira.add(p);
+                    retorno = true;
+                }else {
+                    carreira.add(p);
+                    setPontaEsqueda();
+                    setPontaDireita();
+                    retorno = true;
+                }
+            }
+        }
+        return retorno;
     }
 
-    private void setPontaDireita(int n) {
-        this.pontaDireita = n;
+    /**
+     * Define valor inteiro para ponta esquerda com relação a pedra da ponta esquerda
+     */
+    private void setPontaEsqueda() {
+        pontaEsquerda = carreira.get(0).getLeft();
     }
 
+    /**
+     * Define valor inteiro para ponta direita com relação a pedra da ponta direita
+     */
+    private void setPontaDireita() {
+        this.pontaDireita = carreira.get(carreira.size()-1).getRight();
+    }
+
+    /**
+     * Retorna valor inteiro da ponta esquerda da carreira
+     * @return inteiro
+     */
     public int getPontaEsquerda() {
         return pontaEsquerda;
     }
 
+    /**
+     * Retorna valor inteiro da ponta direita da carreira
+     * @return inteiro
+     */
     public int getPontaDireita() {
         return pontaDireita;
     }
