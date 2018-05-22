@@ -1,27 +1,66 @@
 package model.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import model.Ranking;
+import model.UserList;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Observable;
-import java.util.Observer;
+import java.io.*;
 
-public class JSONWrapper<C, T> implements Observer {
+
+public class JSONWrapper  {
+    private final String USERS_PATH = "resources/users.json";
+    private final String RANKING_PATH = "resources/ranking.json";
     private ObjectMapper mapper;
-    private String filePath;
-    private
 
-    public JSONWrapper(String filePath, T observable) {
-        if(filePath != null && !filePath.trim().isEmpty()) {
-            this.filePath = filePath;
-        }
+
+    public JSONWrapper() {
         mapper = new ObjectMapper();
     }
 
 
-    @Override
-    public void update(Observable o, Object arg) {
-
+    public UserList loadUsers() {
+        UserList retorno = null;
+        try {
+            retorno = mapper.readValue(new File(USERS_PATH), UserList.class);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+        return retorno;
     }
+
+    public void storeUsers(UserList userList) {
+        try {
+            BufferedWriter brf = new BufferedWriter(new FileWriter(new File(USERS_PATH)));
+            String jsonString = mapper.writeValueAsString(userList);
+            brf.write(jsonString);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public Ranking loadRanking() {
+        Ranking retorno = null;
+        try {
+            retorno = mapper.readValue(new File(RANKING_PATH), Ranking.class);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+        return retorno;
+    }
+
+    public void storeRanking(Ranking userList) {
+        try {
+            BufferedWriter brf = new BufferedWriter(new FileWriter(new File(RANKING_PATH)));
+            String jsonString = mapper.writeValueAsString(userList);
+            brf.write(jsonString);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+
 }
