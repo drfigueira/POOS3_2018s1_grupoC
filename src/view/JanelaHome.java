@@ -24,7 +24,9 @@ public class JanelaHome extends JFrame implements ActionListener {
 
     private GridBagLayout layout;
     private GridBagConstraints constraints;
-    private JanelaLogin janelaLogin;
+
+    JanelaRanking janelaRanking;
+
 
     private String email;
     private UserList listUsuario;
@@ -132,6 +134,8 @@ public class JanelaHome extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null, "Você Escolheu Jogar Contra Máquina !!!");
         }else if(e.getSource() == buttonRanking){
             JOptionPane.showMessageDialog(null, "Você Escolheu Ranking !!!");
+            janelaRanking = new JanelaRanking();
+            janelaRanking.setVisible(true);
         }else{
             listUsuario.getUsuario(email).setOnline(false);
             dispose();
