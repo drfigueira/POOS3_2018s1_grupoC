@@ -101,4 +101,13 @@ public class Mesa {
     public int getPontaDireita() {
         return pontaDireita;
     }
+
+    public boolean jogarPedra(Pedra p) {
+        boolean retorno = false;
+        retorno = addPedraLeft(p);
+        if (!retorno) {
+            retorno = addPedraRight(p);
+        }
+        return retorno;
+    }
 }

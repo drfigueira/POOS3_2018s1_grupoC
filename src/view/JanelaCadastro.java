@@ -1,5 +1,8 @@
 package view;
 
+import model.UserList;
+import model.UserSystem;
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Font;
@@ -40,12 +43,12 @@ public class JanelaCadastro extends JInternalFrame implements ActionListener{
     private GridBagConstraints constraints;
 	
 	private JanelaPrincipal janelaPrincipal;
-	//private UserList listUsuario;
+	private UserList listUsuario;
 	
-	public JanelaCadastro(JanelaPrincipal janelaPrincipal){
-        super("Cadastro de Usu�rios", true, true, true, true);
+	public JanelaCadastro(JanelaPrincipal janelaPrincipal, UserList listUsuario){
+        super("Cadastro de Usuários", true, true, true, true);
         this.janelaPrincipal = janelaPrincipal;
-        
+        this.listUsuario = listUsuario;
         criaComponentes();
         ajustaComponentes();
     }
@@ -142,20 +145,21 @@ public class JanelaCadastro extends JInternalFrame implements ActionListener{
 	
 	public void buttonCadastrarClicado(){
 		String email, senha, confirmarSenha;
-		//UserSystem userSystem;
+		UserSystem userSystem;
 		
 		email = txtEmail.getText();
 		senha = txtSenha.getText();
 		confirmarSenha = txtConfirmarSenha.getText();
 		
 		if((senha.equals(confirmarSenha))){
-			//userSystem = new UserSystem(email, senha);			
-			//if(listUsuario.add(userSystem)){
+			userSystem = new UserSystem(email, senha);
+			if(listUsuario.addUsuario(userSystem)){
 				limparCampos();
-				JOptionPane.showMessageDialog(null, "Usu�rio Cadastrado Com Sucesso !!!");				
-			//}else{
-				//caso n�o insira na lista
-			//}			
+				JOptionPane.showMessageDialog(null, "Usuário Cadastrado Com Sucesso !!!");
+				dispose();
+			}else{
+				JOptionPane.showMessageDialog(null, "Já existe um e-mail cadastrado com esse endereço !!!");
+			}
 		}else{
 			JOptionPane.showMessageDialog(null, "Senhas Diferentes !!!");
 		}
@@ -164,6 +168,8 @@ public class JanelaCadastro extends JInternalFrame implements ActionListener{
 	public void buttonCancelarClicado(){
 		limparCampos();
 	}
+
+
 	
 	private void limparCampos(){
 		txtEmail.setText("");

@@ -1,5 +1,7 @@
 package view;
 
+import model.UserList;
+
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -8,14 +10,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
+import javax.swing.*;
 import javax.swing.border.Border;
 
 public class JanelaLogin extends JInternalFrame implements ActionListener{
@@ -35,11 +30,13 @@ public class JanelaLogin extends JInternalFrame implements ActionListener{
     private GridBagConstraints constraints;
     
 	JanelaPrincipal janelaPrincipal;
+	JanelaHome janelaHome;
+	private UserList listUsuario;
 	
-	public JanelaLogin(JanelaPrincipal janelaPrincipal){
-        super("Cadastro de Carro", true, true, true, true);
+	public JanelaLogin(JanelaPrincipal janelaPrincipal, UserList listUsuario){
+        super("Janela de Login", true, true, true, true);
         this.janelaPrincipal = janelaPrincipal;
-
+        this.listUsuario = listUsuario;
         criaComponentes();
         ajustaComponentes();
     }
@@ -119,8 +116,40 @@ public class JanelaLogin extends JInternalFrame implements ActionListener{
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == buttonEntrar){
+            buttonEntrarClicado();
+        }else{
+            buttonCancelarClicado();
+        }
 	}
+
+	public void buttonEntrarClicado(){
+	    String email = "", senha = "";
+
+	    email = txtEmail.getText();
+	    senha = txtSenha.getText();
+
+	    int retorno  = listUsuario.logonUsuario(email, senha);
+	    if(retorno == 3){
+            JOptionPane.showMessageDialog(null, "Seja bem vindo " + email);
+            janelaHome = new JanelaHome(listUsuario, email);
+            janelaHome.setVisible(true);
+            dispose();
+        }else if(retorno == 1){
+            JOptionPane.showMessageDialog(null, "Usuário Bloqueado. Por favor aguarde 2 horas do bloqueio e tente novamente !!!");
+        }else if(retorno == 2){
+            JOptionPane.showMessageDialog(null, "Senha Inválida !!!");
+        }
+    }
+
+    public void buttonCancelarClicado(){
+        limparCampos();
+    }
+
+    private void limparCampos(){
+        txtEmail.setText("");
+        txtSenha.setText("");
+    }
+
 }
