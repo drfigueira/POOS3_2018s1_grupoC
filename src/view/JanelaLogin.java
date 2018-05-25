@@ -30,10 +30,11 @@ public class JanelaLogin extends JInternalFrame implements ActionListener{
     private GridBagConstraints constraints;
     
 	JanelaPrincipal janelaPrincipal;
+	JanelaHome janelaHome;
 	private UserList listUsuario;
 	
 	public JanelaLogin(JanelaPrincipal janelaPrincipal, UserList listUsuario){
-        super("Cadastro de Carro", true, true, true, true);
+        super("Janela de Login", true, true, true, true);
         this.janelaPrincipal = janelaPrincipal;
         this.listUsuario = listUsuario;
         criaComponentes();
@@ -132,9 +133,12 @@ public class JanelaLogin extends JInternalFrame implements ActionListener{
 	    int retorno  = listUsuario.logonUsuario(email, senha);
 	    if(retorno == 3){
             JOptionPane.showMessageDialog(null, "Seja bem vindo " + email);
+            janelaHome = new JanelaHome(listUsuario, email);
+            janelaHome.setVisible(true);
+            dispose();
         }else if(retorno == 1){
             JOptionPane.showMessageDialog(null, "Usuário Bloqueado. Por favor aguarde 2 horas do bloqueio e tente novamente !!!");
-        }else{
+        }else if(retorno == 2){
             JOptionPane.showMessageDialog(null, "Senha Inválida !!!");
         }
     }
@@ -143,10 +147,9 @@ public class JanelaLogin extends JInternalFrame implements ActionListener{
         limparCampos();
     }
 
-
-
     private void limparCampos(){
         txtEmail.setText("");
         txtSenha.setText("");
     }
+
 }
