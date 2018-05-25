@@ -1,39 +1,24 @@
 package model;
 
-public class JogadorHumano extends User implements Jogador {
-    private int contJogoVenceu;
-    private int contJogoPerdeu;
+public class JogadorHumano extends Jogador {
+    private User user;
 
     /**
      * Construtor base de User, recebe o email e a senha do usuario.
      * E inicializa as váriaveis que armazena a quantidade de vitórias e derrotas
      *
-     * @param email Uma String contendo o email do usuario.
-     * @param senha Uma String que ser&aacute; utilizada para construir a senha do usuario.
+     * @param user O User referente a este jogador.
      */
-    public JogadorHumano(String email, String senha) {
-        super(email, senha);
-        this.contJogoVenceu = 0;
-        this.contJogoPerdeu = 0;
-    }
-
-    /**
-     * Deve retornar o score atual do JogadorHumano. O score será dado pela diferença entre
-     * o número de vitórias e derrotas do Jogador.
-     * @return Um inteiro contendo o score do Jogador.
-     */
-    @Override
-    public int getScore() {
-        return contJogoVenceu - contJogoPerdeu;
+    public JogadorHumano(User user) {
+        this.user = user;
     }
 
     @Override
-    public void venceu() {
-        contJogoVenceu++;
-    }
-
-    @Override
-    public void perdeu() {
-        contJogoPerdeu++;
+    public String toString() {
+        StringBuilder sb = new StringBuilder("User: ");
+        sb.append(user);
+        sb.append(" - Score: ");
+        sb.append(super.getScore());
+        return sb.toString();
     }
 }

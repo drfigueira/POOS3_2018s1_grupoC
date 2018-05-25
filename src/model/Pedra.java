@@ -81,6 +81,12 @@ public class Pedra {
         right = aux;
     }
 
+    public boolean pedraValida(int ponta) {
+        return left == ponta || right == ponta;
+    }
+
+    public boolean isBucha() { return left == right; }
+
     @Override
     public String toString() {
         return "|" + left + ":" + right + "|";

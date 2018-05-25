@@ -1,34 +1,49 @@
 package model;
 
-public class JogadorComputador implements  Jogador {
-    private int contJogoVenceu;
-    private int contJogoPerdeu;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-    /**
-     * Contrutor sem parametros que apenas inicializa as variaveis que armazena quantidade de vitória e derrota
-     */
-    public JogadorComputador(){
-        this.contJogoVenceu = 0;
-        this.contJogoPerdeu = 0;
+public class JogadorComputador extends Jogador {
+    private int opcaoJogada;
+
+    public int pensarJogada(Mesa m) {
+        int size = hand.getSize();
+        int maiorValue = 0, retorno = -1;
+
+        if (possuiJogada(m)) {
+            for (int i = 0; i < size; i++) {
+                Pedra p = hand.getAt(i);
+                int value = 0;
+                if (p.pedraValida(m.getPontaEsquerda()) || p.pedraValida(m.getPontaEsquerda())) {
+                    value++;
+                }
+                if (p.isBucha()) {
+                    value++;
+                }
+                value += naoFecha(i);
+
+                if (value > maiorValue) {
+                    maiorValue = value;
+                    retorno = i;
+                }
+            }
+        }
+        return retorno;
     }
 
-    /**
-     * Deve retornar o score atual do JogadorComputador. O score será dado pela diferença entre
-     * o número de vitórias e derrotas do Jogador.
-     * @return Um inteiro contendo o score do Jogador.
-     */
-    @Override
-    public int getScore() {
-        return contJogoVenceu - contJogoPerdeu;
-    }
+    private int naoFecha(int index) {
+        int retorno = -1;
+        Pedra candidata = hand.getAt(index);
 
-    @Override
-    public void venceu() {
-        contJogoVenceu++;
-    }
-
-    @Override
-    public void perdeu() {
-        contJogoPerdeu++;
+        for(int i = 0; i< hand.getSize(); i++) {
+            Pedra p = hand.getAt(i);
+            if (candidata.encaixeLeft(p.getLeft()) || candidata.encaixeLeft(p.getRight()) ||
+                candidata.encaixeRight(p.getLeft()) || candidata.encaixeRight(p.getRight())) {
+                retorno++;
+            }
+        }
+        return retorno;
     }
 }

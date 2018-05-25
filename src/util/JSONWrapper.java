@@ -1,4 +1,4 @@
-package model.util;
+package util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Ranking;

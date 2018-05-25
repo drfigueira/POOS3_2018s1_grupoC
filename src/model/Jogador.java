@@ -1,25 +1,106 @@
 package model;
 
-/**
- * Interface que dita o comportamento de um Jogador de dominó do sistema.
- */
-public interface Jogador {
+public abstract class Jogador {
+    protected ConjuntoPedra hand;
+    private int contJogoVenceu;
+    private int contJogoPerdeu;
+
+    public Jogador() {
+        hand = new ConjuntoPedra();
+    }
+
+    public void setHand(Domino d, int limite) {
+        Pedra p = null;
+        int i = 0;
+        if(d != null) {
+            while(i < limite && !d.isEmpty()) {
+                p = d.removePedra(0);
+                if(p != null) {
+                    hand.addPedra(p);
+                }
+                i++;
+            }
+        }
+    }
+
+    public boolean possuiJogada(Mesa m) {
+        boolean retorno = false;
+        int i = 0;
+        while(!retorno && i < hand.getSize()) {
+            retorno = hand.getAt(i).pedraValida(m.getPontaEsquerda()) || hand.getAt(i).pedraValida(m.getPontaDireita());
+            i++;
+        }
+        return retorno;
+    }
+
+    public boolean comprarPedra(Domino domino, Mesa mesa) {
+        boolean retorno = false;
+        if(domino != null) {
+            while(!retorno && !domino.isEmpty()) {
+                hand.addPedra(domino.removePedra(0));
+                retorno = possuiJogada(mesa);
+            }
+        }
+        return retorno;
+    }
+
+    public Pedra maiorBucha() {
+        Pedra bucha = null;
+        int soma = 0;
+        for(Pedra p: hand.get()) {
+            if(p.getLeft() == p.getRight()) {
+                if(soma < p.getLeft() + p.getRight()) {
+                    bucha = p;
+                    soma = p.getLeft() + p.getRight();
+                }
+            }
+        }
+        return bucha;
+    }
+
+    public Pedra maiorPedra() {
+        Pedra pedra = null;
+        int soma = 0;
+        for(Pedra p: hand.get()) {
+            if(soma < p.getLeft() + p.getRight()) {
+                pedra = p;
+                soma = p.getLeft() + p.getRight();
+            }
+        }
+        return pedra;
+    }
 
     /**
-     * Deve retornar o score atual do Jogador. O score será dado pela diferença entre
+     * Deve retornar o score atual do JogadorComputador. O score será dado pela diferença entre
      * o número de vitórias e derrotas do Jogador.
      * @return Um inteiro contendo o score do Jogador.
      */
-    public int getScore();
+    public int getScore() {
+        return contJogoVenceu - contJogoPerdeu;
+    }
+
+    public void venceu() {
+        contJogoVenceu++;
+    }
+
+    public void perdeu() {
+        contJogoPerdeu++;
+    }
 
     /**
-     * Dá uma vitória ao Jogador.
+     * Método que efetua uma jogada a partir do índice da pedra passado como parâmetro.
+     * @param indexPedra O índice da pedra desejada.
+     * @return A Pedra desejada.
+     * @throws IndexOutOfBoundsException
      */
-    public void venceu();
+    public Pedra jogar(int indexPedra) throws  IndexOutOfBoundsException {
+        if (indexPedra < 0 || indexPedra >= hand.getSize()) {
+            throw new IndexOutOfBoundsException("Pedra número " + indexPedra + " não encontrada");
+        }
+        return hand.getAt(indexPedra);
+    }
 
-    /**
-     * Registra uma derrota do Jogador.
-     */
-    public void perdeu();
 }
+
+
 
