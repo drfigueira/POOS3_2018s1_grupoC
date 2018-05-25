@@ -34,4 +34,33 @@ public class Jogo {
 
         donoDoTurno = ((p1.getLeft() + p1.getRight()) > (p2.getLeft() + p2.getRight())) ? jogador1 : jogador2;
     }
+
+    public Jogador getJogador1() {
+        return jogador1;
+    }
+
+    public Jogador getJogador2() {
+        return jogador2;
+    }
+
+    public Mesa getMesa() {
+        return mesa;
+    }
+
+    public Domino getDomino() {
+        return domino;
+    }
+
+    public int getTurno() {
+        return turno;
+    }
+
+    public Jogador getDonoDoTurno() {
+        return donoDoTurno;
+    }
+
+    public void passaTurno() {
+        turno++;
+        donoDoTurno = (donoDoTurno == jogador1) ? jogador2 : jogador1;
+    }
 }

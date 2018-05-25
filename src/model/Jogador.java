@@ -9,6 +9,8 @@ public abstract class Jogador {
         hand = new ConjuntoPedra();
     }
 
+    public ConjuntoPedra getHand() { return this.hand; }
+
     public void setHand(Domino d, int limite) {
         Pedra p = null;
         int i = 0;

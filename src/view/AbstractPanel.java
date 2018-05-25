@@ -12,6 +12,7 @@ public class AbstractPanel extends JPanel {
         layout = new GridBagLayout();
         setLayout(layout);
         setBorder(BorderFactory.createEtchedBorder());
+        setVisible(true);
     }
 
     public void adicionarComponente(JComponent component, int y, int x, int pos, int cols, int lins, int preenche){
