@@ -7,7 +7,7 @@ public class Main {
         /**
          * Criando Objeto Usuário para testes
          */
-        UserSystem usuario1 = new UserSystem("igor.gabriel.saturnino@gmail.com", "igor123");
+        //UserSystem usuario1 = new UserSystem("igor.gabriel.saturnino@gmail.com", "igor123");
 
         /**
          * Declarando váriavel para armazenar o valor que vai ser retornado quando Usuário tentar acessar
@@ -15,6 +15,7 @@ public class Main {
          * ACESSO COM SUCESSO
          * USUARIO BLOQUEADO
          */
+        /*
         int retornoVerifica;
 
         retornoVerifica = usuario1.verificaAcesso("igor123");//1ª TENTATIVA
@@ -28,6 +29,6 @@ public class Main {
             System.out.println("Senha invalida !!!");
         }else{
             System.out.println("Usuário Bloqueado, aguarde até o tempo de desbloqueio !!!");
-        }
+        }*/
     }
 }
