@@ -49,18 +49,19 @@ public class JanelaMesa extends JFrame implements ActionListener {
         panel.adicionarComponente(panelBotoes, 2, 0, GridBagConstraints.CENTER,
                 1, 1, GridBagConstraints.BOTH);
 
+        panelJogador = new JogadorHumanoPanel();
         setPanelJogador(jogo.getDonoDoTurno());
-//        panel.adicionarComponente(panelJogador, 1, 0, GridBagConstraints.CENTER,
-//                1, 1, GridBagConstraints.BOTH);
+        panel.adicionarComponente(panelJogador, 1, 0, GridBagConstraints.CENTER,
+                1, 1, GridBagConstraints.BOTH);
 
         add(panel);
     }
 
     private void setPanelJogador(Jogador jogador){
-        panelJogador = new JogadorHumanoPanel((JogadorHumano) ((jogador == jogo.getJogador1()) ?
-                         jogo.getJogador1() : jogo.getJogador2()));
+        panelJogador.setJogador((JogadorHumano) jogador);
+
         if (!jogo.getDonoDoTurno().possuiJogada(jogo.getMesa())) {
-            btnComprar.setEnabled(false);
+            btnJogar.setEnabled(false);
         }
         if (jogo.getDomino().isEmpty()) {
             btnComprar.setEnabled(false);
@@ -68,8 +69,6 @@ public class JanelaMesa extends JFrame implements ActionListener {
         if(!btnComprar.isEnabled() && !btnJogar.isEnabled()) {
             btnPassar.setEnabled(true);
         }
-        panel.adicionarComponente(panelJogador, 1, 0, GridBagConstraints.CENTER,
-                1, 1, GridBagConstraints.BOTH);
     }
 
     private void atualizarMesa() {
@@ -130,6 +129,7 @@ public class JanelaMesa extends JFrame implements ActionListener {
                     "Não é possível jogar a pedra " + p, JOptionPane.ERROR_MESSAGE);
         }
         else {
+            panelJogador.atualizarMao();
             passarTurno();
         }
     }
@@ -139,8 +139,15 @@ public class JanelaMesa extends JFrame implements ActionListener {
     }
 
     public void passarTurno() {
+        if(jogo.getDonoDoTurno().getHand().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "VITÓRIA", "Jogador " +
+                    ((JogadorHumano) jogo.getDonoDoTurno()).getEmail(), JOptionPane.INFORMATION_MESSAGE);
+            jogo.getDonoDoTurno().venceu();
+            dispose();
+        }
         jogo.passaTurno();
         setPanelJogador(jogo.getDonoDoTurno());
         atualizarMesa();
     }
+
 }

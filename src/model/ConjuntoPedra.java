@@ -24,7 +24,7 @@ public class ConjuntoPedra {
     }
 
     public Pedra getAt(int pos) {
-        return posValida(pos)? conjunto.get(pos) : null;
+        return posValida(pos) ? conjunto.get(pos) : null;
     }
 
     public void embaralharPedras() {

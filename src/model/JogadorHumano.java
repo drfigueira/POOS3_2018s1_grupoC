@@ -13,6 +13,10 @@ public class JogadorHumano extends Jogador {
         this.user = user;
     }
 
+    public String getEmail() {
+        return this.user.getEmail();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("User: ");
