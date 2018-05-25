@@ -46,7 +46,7 @@ public class JanelaCadastro extends JInternalFrame implements ActionListener{
 	private UserList listUsuario;
 	
 	public JanelaCadastro(JanelaPrincipal janelaPrincipal, UserList listUsuario){
-        super("Cadastro de Usu�rios", true, true, true, true);
+        super("Cadastro de Usuários", true, true, true, true);
         this.janelaPrincipal = janelaPrincipal;
         this.listUsuario = listUsuario;
         criaComponentes();
@@ -156,6 +156,7 @@ public class JanelaCadastro extends JInternalFrame implements ActionListener{
 			if(listUsuario.addUsuario(userSystem)){
 				limparCampos();
 				JOptionPane.showMessageDialog(null, "Usuário Cadastrado Com Sucesso !!!");
+				dispose();
 			}else{
 				JOptionPane.showMessageDialog(null, "Já existe um e-mail cadastrado com esse endereço !!!");
 			}

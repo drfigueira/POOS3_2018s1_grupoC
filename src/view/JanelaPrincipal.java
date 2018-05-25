@@ -78,7 +78,7 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
                   janelaCadastro = new JanelaCadastro(this, listUsuario);
                   carregarJanela(janelaCadastro);
             }else{
-                JOptionPane.showMessageDialog(null, "Janela de CADASTRO Já Aberta !!!");
+                JOptionPane.showMessageDialog(null, "Janela de CADASTRO J Aberta !!!");
             } 
 		}else if(opcaoLogin == e.getSource()){
 			//VERIFICA��O SE A JANELA DE LOGIN ESTA ABERTA
@@ -95,16 +95,16 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
 		}
 		
 	}
-	
+
 	//METODO PARA CHAMAR AS TELAS
     private void carregarJanela(JInternalFrame janela){
-        desktop.add(janela);               
+        desktop.add(janela);
         desktop.moveToFront(janela);
     }
-    
+
     //METODO PARA VERIFICAR SE A JANELA JA ESTA ABERTA
     private boolean isVerificarJanelaAtiva(JInternalFrame janela){
-        return janela != null && !janela.isClosed();      
+        return janela != null && !janela.isClosed();
     }
 	
 }
