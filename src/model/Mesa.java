@@ -61,12 +61,12 @@ public class Mesa {
                     p.virarPedra();
                     carreira.add(p);
                     retorno = true;
-                }else {
-                    carreira.add(p);
-                    setPontaEsqueda();
-                    setPontaDireita();
-                    retorno = true;
                 }
+            }else {
+                carreira.add(p);
+                setPontaEsqueda();
+                setPontaDireita();
+                retorno = true;
             }
         }
         return retorno;
@@ -109,5 +109,15 @@ public class Mesa {
             retorno = addPedraRight(p);
         }
         return retorno;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for(Pedra p : carreira) {
+            sb.append(p);
+            sb.append("  ");
+        }
+        return sb.toString();
     }
 }
