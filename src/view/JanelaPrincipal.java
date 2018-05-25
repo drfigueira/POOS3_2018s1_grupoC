@@ -1,5 +1,8 @@
 package view;
 
+import model.UserList;
+import model.UserSystem;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,10 +25,13 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
     
     private JanelaCadastro janelaCadastro;
     private JanelaLogin janelaLogin;
+
+    private UserList listUsuario;
     
     public JanelaPrincipal(){
     	criaComponentes();
     	ajustaComponentes();
+    	listUsuario = new UserList();
     }
     
     private void criaComponentes(){
@@ -69,19 +75,19 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
 			//VERIFICA��O SE A JANELA DE CADASTRO ESTA ABERTA
             if(!isVerificarJanelaAtiva(janelaCadastro)){
                   System.out.println("Cadastro");
-                  janelaCadastro = new JanelaCadastro(this);
+                  janelaCadastro = new JanelaCadastro(this, listUsuario);
                   carregarJanela(janelaCadastro);
             }else{
-                JOptionPane.showMessageDialog(null, "Janela de CADASTRO J� Aberta !!!");
+                JOptionPane.showMessageDialog(null, "Janela de CADASTRO Já Aberta !!!");
             } 
 		}else if(opcaoLogin == e.getSource()){
 			//VERIFICA��O SE A JANELA DE LOGIN ESTA ABERTA
 			if(!isVerificarJanelaAtiva(janelaLogin)){
                 System.out.println("Login");
-                janelaLogin = new JanelaLogin(this);
+                janelaLogin = new JanelaLogin(this, listUsuario);
                 carregarJanela(janelaLogin);
           }else{
-              JOptionPane.showMessageDialog(null, "Janela de LOGIN J� Aberta !!!");
+              JOptionPane.showMessageDialog(null, "Janela de LOGIN Já Aberta !!!");
           } 
 		}else{
 			System.out.println("Sair");
