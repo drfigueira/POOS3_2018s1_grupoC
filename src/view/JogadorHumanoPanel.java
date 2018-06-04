@@ -24,7 +24,9 @@ public class JogadorHumanoPanel extends AbstractPanel {
     private void addComboBoxItems() {
         ConjuntoPedra hand = jogador.getHand();
         for(int i = 0; i < hand.getSize(); i++) {
-            this.mao.addItem(hand.getAt(i));
+            if(hand.getAt(i) != null) {
+                this.mao.addItem(hand.getAt(i));
+            }
         }
     }
 
@@ -37,6 +39,10 @@ public class JogadorHumanoPanel extends AbstractPanel {
         mao.removeAllItems();
         addComboBoxItems();
         labelNome.setText(jogador.toString());
+    }
+
+    public boolean possuiJogada(Mesa mesa) {
+        return jogador.possuiJogada(mesa);
     }
 
     public Pedra getSelectedIndex() {

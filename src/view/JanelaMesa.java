@@ -119,6 +119,8 @@ public class JanelaMesa extends JFrame implements ActionListener {
         } else {
             dispose();
         }
+        btnJogar.setEnabled(panelJogador.possuiJogada(jogo.getMesa()));
+        btnComprar.setEnabled(!panelJogador.possuiJogada(jogo.getMesa()));
     }
 
     private void efetuarJogada() {
@@ -136,6 +138,7 @@ public class JanelaMesa extends JFrame implements ActionListener {
 
     private void efetuarCompra() {
         panelJogador.compraPedra(jogo.getDomino(), jogo.getMesa());
+        btnJogar.setEnabled(panelJogador.possuiJogada(jogo.getMesa()));
     }
 
     public void passarTurno() {
