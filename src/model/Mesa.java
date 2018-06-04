@@ -26,11 +26,11 @@ public class Mesa {
             if(!carreira.isEmpty()) {
                 if(p.getLeft() == getPontaEsquerda()) {
                     p.virarPedra();
-                    carreira.add(p);
+                    carreira.add(0, p);
                     setPontaEsqueda();
                     retorno = true;
                 }else if(p.getRight() == getPontaEsquerda()) {
-                    carreira.add(p);
+                    carreira.add(0, p);
                     setPontaEsqueda();
                     retorno = true;
                 }
@@ -60,6 +60,7 @@ public class Mesa {
                 }else if(p.getRight() == getPontaDireita()) {
                     p.virarPedra();
                     carreira.add(p);
+                    setPontaDireita();
                     retorno = true;
                 }
             }else {

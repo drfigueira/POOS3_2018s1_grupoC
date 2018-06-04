@@ -29,7 +29,10 @@ public abstract class Jogador {
         boolean retorno = false;
         int i = 0;
         while(!retorno && i < hand.getSize()) {
-            retorno = hand.getAt(i).pedraValida(m.getPontaEsquerda()) || hand.getAt(i).pedraValida(m.getPontaDireita());
+            retorno = hand.getAt(i).pedraValida(m.getPontaEsquerda());
+            if(!retorno) {
+                retorno = hand.getAt(i).pedraValida(m.getPontaDireita());
+            }
             i++;
         }
         return retorno;

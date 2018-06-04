@@ -12,12 +12,10 @@ public class JogadorHumanoPanel extends AbstractPanel {
     private JogadorHumano jogador;
     private JLabel labelNome;
 
-    public JogadorHumanoPanel(JogadorHumano jogador) {
+    public JogadorHumanoPanel() {
         super();
-        this.jogador = jogador;
-        labelNome = new JLabel("Jogador: " + jogador);
+        labelNome = new JLabel();
         mao = new JComboBox<>();
-        addComboBoxItems();
 
         adicionarComponente(labelNome, 0, 0, GridBagConstraints.NORTH, 1, 1, GridBagConstraints.NONE);
         adicionarComponente(mao, 1, 0, GridBagConstraints.CENTER, 1, 1, GridBagConstraints.BOTH);
@@ -26,12 +24,25 @@ public class JogadorHumanoPanel extends AbstractPanel {
     private void addComboBoxItems() {
         ConjuntoPedra hand = jogador.getHand();
         for(int i = 0; i < hand.getSize(); i++) {
-            this.mao.addItem(hand.getAt(i));
+            if(hand.getAt(i) != null) {
+                this.mao.addItem(hand.getAt(i));
+            }
         }
     }
 
     public JogadorHumano getJogador() {
         return jogador;
+    }
+
+    public void setJogador(JogadorHumano jogador) {
+        this.jogador = jogador;
+        mao.removeAllItems();
+        addComboBoxItems();
+        labelNome.setText(jogador.toString());
+    }
+
+    public boolean possuiJogada(Mesa mesa) {
+        return jogador.possuiJogada(mesa);
     }
 
     public Pedra getSelectedIndex() {
@@ -41,10 +52,18 @@ public class JogadorHumanoPanel extends AbstractPanel {
 
     public void compraPedra(Pedra p) {
         jogador.getHand().addPedra(p);
+        mao.removeAllItems();
+        addComboBoxItems();
     }
 
     public void compraPedra(Domino d, Mesa m) {
         jogador.comprarPedra(d, m);
+        mao.removeAllItems();
+        addComboBoxItems();
+    }
+
+    public void atualizarMao() {
+        jogador.getHand().removePedra(mao.getSelectedIndex());
     }
 
 }
