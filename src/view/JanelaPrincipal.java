@@ -16,15 +16,21 @@ import javax.swing.JOptionPane;
 
 public class JanelaPrincipal extends JFrame implements ActionListener{
 	private JMenuBar barra;
+
+    private JMenu menuConfiguracao;
     private JMenu menuArquivo;
+
     private JMenuItem opcaoCadastro;
     private JMenuItem opcaoLogin;
     private JMenuItem opcaoSair;
+
+    private JMenuItem opcaoRegras;
     
     private JDesktopPane desktop;
     
     private JanelaCadastro janelaCadastro;
     private JanelaLogin janelaLogin;
+    private JanelaRegras janelaRegras;
 
     private UserList listUsuario;
     
@@ -39,6 +45,7 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
     	barra = new JMenuBar();
     	
     	menuArquivo = new JMenu("Arquivo");
+        menuConfiguracao = new JMenu("Configuração");
     	
     	opcaoCadastro = new JMenuItem("Cadastro");
     	opcaoCadastro.addActionListener(this);
@@ -52,9 +59,14 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
     	menuArquivo.add(opcaoCadastro);
     	menuArquivo.add(opcaoLogin);
     	menuArquivo.add(opcaoSair);
+
+        opcaoRegras = new JMenuItem("Regras");
+        opcaoRegras.addActionListener(this);
+
+        menuConfiguracao.add(opcaoRegras);
     	
     	barra.add(menuArquivo);
-    	
+    	barra.add(menuConfiguracao);
     	setJMenuBar(barra);
     	
     	add(desktop);
@@ -88,8 +100,16 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
                 carregarJanela(janelaLogin);
           }else{
               JOptionPane.showMessageDialog(null, "Janela de LOGIN Já Aberta !!!");
-          } 
-		}else{
+          }
+		}else if(opcaoRegras == e.getSource()){
+            if(!isVerificarJanelaAtiva(janelaRegras)){
+                System.out.println("Regras");
+                janelaRegras = new JanelaRegras();
+                carregarJanela(janelaRegras);
+            }else{
+                JOptionPane.showMessageDialog(null, "Janela de REGRAS Já Aberta !!!");
+            }
+        }else{
 			System.out.println("Sair");
             System.exit(0);
 		}
