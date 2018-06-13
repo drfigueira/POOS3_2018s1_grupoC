@@ -131,7 +131,12 @@ public class JanelaLogin extends JInternalFrame implements ActionListener{
 	    senha = txtSenha.getText();
 
 	    int retorno  = listUsuario.logonUsuario(email, senha);
-	    if(retorno == 3){
+	    if(email.equals("")){
+	        JOptionPane.showMessageDialog(null,"Campo Email está vazio. Por Favor Preencher !!!");
+        }else if(senha.equals("")){
+            JOptionPane.showMessageDialog(null,"Campo Senha está vazio. Por Favor Preencher !!!");
+        }
+	    else if(retorno == 3){
             JOptionPane.showMessageDialog(null, "Seja bem vindo " + email);
             janelaHome = new JanelaHome(listUsuario, email);
             janelaHome.setVisible(true);
