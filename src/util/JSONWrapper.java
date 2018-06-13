@@ -79,7 +79,8 @@ public class JSONWrapper  {
                     e.printStackTrace();
                 }
             } else {
-                retorno = new Ranking();
+                //retorno = new Ranking();,
+                retorno = Ranking.getInstance();
             }
         }
         return retorno;

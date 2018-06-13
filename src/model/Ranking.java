@@ -5,13 +5,21 @@ public class Ranking {
 
     private Jogador[] ranking;
     private int qtdJogadores;
+    private static Ranking instance;
 
     /**
      * Contrutor de um array de Jogador, com limite de Jogador estipulado em 10
      */
-    public Ranking() {
+    private Ranking() {
         ranking = new Jogador[LIMITE];
         this.qtdJogadores = 0;
+    }
+
+    public static Ranking getInstance(){
+        if(instance == null){
+            instance = new Ranking();
+        }
+        return instance;
     }
 
     /**
@@ -96,6 +104,18 @@ public class Ranking {
      */
     public boolean isFull() {
         return this.qtdJogadores == LIMITE;
+    }
+
+    public int getTamanhoArray(){
+        int i = 0;
+        while(ranking[i] != null){
+            i++;
+        }
+        return i;
+    }
+
+    public Jogador getJogadorAtId(int pos){
+        return ranking[pos];
     }
 
 }

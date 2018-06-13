@@ -1,9 +1,6 @@
 package view;
 
-import model.Jogador;
-import model.JogadorHumano;
-import model.Jogo;
-import model.Pedra;
+import model.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -126,7 +123,7 @@ public class JanelaMesa extends JFrame implements ActionListener {
     private void efetuarJogada() {
         Pedra p = panelJogador.getSelectedIndex();
         if (!jogo.getMesa().jogarPedra(p)) {
-            panelJogador.compraPedra(p);
+            //panelJogador.compraPedra(p);
             JOptionPane.showMessageDialog(this, "Jogada Inválida",
                     "Não é possível jogar a pedra " + p, JOptionPane.ERROR_MESSAGE);
         }
@@ -145,7 +142,22 @@ public class JanelaMesa extends JFrame implements ActionListener {
         if(jogo.getDonoDoTurno().getHand().isEmpty()) {
             JOptionPane.showMessageDialog(this, "VITÓRIA", "Jogador " +
                     ((JogadorHumano) jogo.getDonoDoTurno()).getEmail(), JOptionPane.INFORMATION_MESSAGE);
+
+            //ADICIONANDO PONTO PARA O VENCEDOR
             jogo.getDonoDoTurno().venceu();
+            Ranking ranking = Ranking.getInstance();
+
+            //ADICIONANDO PLAYER NO RANKING
+            ranking.addPlayer(jogo.getDonoDoTurno());
+
+            //FAZENDO JOGO RECEBER USUARIO PERDEDOR
+            jogo.passaTurno();
+            //ACRESCENTANDO UMA DERROTA
+            jogo.getDonoDoTurno().perdeu();
+
+            //ADICIONANDO PLAYER NO RANKING
+            ranking.addPlayer(jogo.getDonoDoTurno());
+
             dispose();
         }
         jogo.passaTurno();
