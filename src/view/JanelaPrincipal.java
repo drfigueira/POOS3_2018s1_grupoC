@@ -2,6 +2,7 @@ package view;
 
 import model.UserList;
 import model.UserSystem;
+import util.JSONWrapper;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,11 +34,15 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
     private JanelaRegras janelaRegras;
 
     private UserList listUsuario;
+
+//    private JSONWrapper jsonWrapper;
     
     public JanelaPrincipal(){
     	criaComponentes();
     	ajustaComponentes();
     	listUsuario = new UserList();
+//        jsonWrapper = new JSONWrapper();
+//        listUsuario = jsonWrapper.loadUsers();
     }
     
     private void criaComponentes(){

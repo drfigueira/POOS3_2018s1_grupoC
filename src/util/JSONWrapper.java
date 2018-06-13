@@ -1,5 +1,7 @@
 package util;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Ranking;
 import model.UserList;
@@ -22,6 +24,7 @@ public class JSONWrapper  {
      */
     public JSONWrapper() {
         mapper = new ObjectMapper();
+        mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
     }
 
 

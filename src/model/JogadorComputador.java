@@ -8,7 +8,19 @@ import java.util.Map;
 public class JogadorComputador extends Jogador {
     private int opcaoJogada;
 
-    public int pensarJogada(Mesa m) {
+    /**
+     * Pensa em uma jogada de acordo com o estado atual da mesa.
+     * O método avalia todas as pedras na mão do jogador, avaliando qual a melhor jogada a
+     * partir dos seguintes critérios:
+     *
+     *  - Uma jogada de preferência não deve fechar o bot.
+     *  - A melhor jogada é a que deixa a ponta exposta com o maior número de possibilidades para que o
+     *  bot efetue uma próxima jogada.
+     *
+     * @param m A Mesa onde a jogada será efetuada.
+     * @return O índice da melhor opção. Retorna -1 caso nenhuma pedra seja jogável.
+     */
+    private int pensarJogada(Mesa m) {
         int size = hand.getSize();
         int maiorValue = 0, retorno = -1;
 
@@ -33,6 +45,13 @@ public class JogadorComputador extends Jogador {
         return retorno;
     }
 
+    /**
+     * Avalia se a pedra do índice em questão não fecha a mão do bot.
+     *
+     * @param index O índice da pedra que se deseja avaliar.
+     * @return Uma pontuação que indica quantas opções de jogada o bot terá caso jogue essa pedra
+     * e esta não seja encoberta por outra até seu próximo turno.
+     */
     private int naoFecha(int index) {
         int retorno = -1;
         Pedra candidata = hand.getAt(index);
@@ -45,5 +64,19 @@ public class JogadorComputador extends Jogador {
             }
         }
         return retorno;
+    }
+
+    /**
+     * Avalia qual a melhor jogada a ser efetuada e retorna a Pedra selecionada.
+     * @param m A mesa onde a jogada será efetuada.
+     * @return A Pedra a ser jogada.
+     * @throws NaoTemJogadaException caso não haja pedras aptas.
+     */
+    public Pedra jogar(Mesa m) throws NaoTemJogadaException {
+        int index = this.pensarJogada(m);
+        if (index == -1) {
+            throw new NaoTemJogadaException();
+        }
+        return this.jogar(index);
     }
 }
