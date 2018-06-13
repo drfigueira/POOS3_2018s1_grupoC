@@ -92,6 +92,15 @@ public abstract class Jogador {
         contJogoPerdeu++;
     }
 
+    /*
+    public void setContJogoVenceu(int contJogoVenceu) {
+        this.contJogoVenceu = contJogoVenceu;
+    }
+
+    public void setContJogoPerdeu(int contJogoPerdeu){
+        this.contJogoPerdeu = contJogoPerdeu;
+    }*/
+
     /**
      * Método que efetua uma jogada a partir do índice da pedra passado como parâmetro.
      * @param indexPedra O índice da pedra desejada.
