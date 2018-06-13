@@ -1,6 +1,9 @@
 package view;
 
+import model.JogadorHumano;
+import model.Jogo;
 import model.UserList;
+import model.UserSystem;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -9,6 +12,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class JanelaHome extends JFrame implements ActionListener {
+    JDesktopPane desktop;
+
     private JPanel painelLabel;
     private JPanel painelButtonJogarVSJogador;
     private JPanel painelButtonJogarVSMaquina;
@@ -26,6 +31,7 @@ public class JanelaHome extends JFrame implements ActionListener {
     private GridBagConstraints constraints;
 
     JanelaRanking janelaRanking;
+    JanelaLoginDois janelaLoginDois;
 
 
     private String email;
@@ -40,6 +46,8 @@ public class JanelaHome extends JFrame implements ActionListener {
     }
 
     private void criaComponentes(){
+        desktop = new JDesktopPane();
+
         layout = new GridBagLayout();
         constraints = new GridBagConstraints();
 
@@ -77,6 +85,7 @@ public class JanelaHome extends JFrame implements ActionListener {
         buttonSair = new JButton("Sair");
         buttonSair.addActionListener(this);
 
+        add(desktop);
         inserirComponentesNaJanela();
     }
 
@@ -130,6 +139,8 @@ public class JanelaHome extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == buttonJogadorVsJogador){
             JOptionPane.showMessageDialog(null, "Você Escolheu Jogar Contra Outro Jogador !!!");
+            buttonJogadorXJogadorClicado();
+
         }else if(e.getSource() == buttonJogadorVsMaquina){
             JOptionPane.showMessageDialog(null, "Você Escolheu Jogar Contra Máquina !!!");
         }else if(e.getSource() == buttonRanking){
@@ -141,4 +152,16 @@ public class JanelaHome extends JFrame implements ActionListener {
             dispose();
         }
     }
+
+    public void buttonJogadorXJogadorClicado(){
+        janelaLoginDois = new JanelaLoginDois(listUsuario, email);
+        janelaLoginDois.setVisible(true);
+        /*
+        JogadorHumano jH1 = new JogadorHumano(listUsuario.getUsuario(email));
+        //JogadorHumano jH2 = new
+        Jogo jogo = new Jogo(jH1,
+                new JogadorHumano(new UserSystem("user2@teste.com", "123")));
+        new JanelaMesa(jogo);*/
+    }
+
 }
