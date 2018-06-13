@@ -1,5 +1,10 @@
 package view;
 
+import model.Jogador;
+import model.JogadorHumano;
+import model.Ranking;
+import model.UserSystem;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
@@ -26,6 +31,7 @@ public class JanelaRanking extends JFrame implements ActionListener {
         super("Ranking");
         criaComponentes();
         ajustaComponentes();
+        preencherJtable();
     }
 
     private void criaComponentes(){
@@ -51,6 +57,7 @@ public class JanelaRanking extends JFrame implements ActionListener {
 
 
         tableRanking = new JTable();
+        /*
         tableRanking.setModel(new DefaultTableModel(
                 new Object[][]
                         {
@@ -61,7 +68,7 @@ public class JanelaRanking extends JFrame implements ActionListener {
                                 {"5º","Caio@gmail.com", "200"},
                         },
                 new String[] {"Posicao", "E-mail", "Pontos"}
-        ));
+        ));*/
 
         scrollTable = new JScrollPane(tableRanking);
 
@@ -120,5 +127,27 @@ public class JanelaRanking extends JFrame implements ActionListener {
         if(e.getSource() == buttonVoltar){
             dispose();
         }
+    }
+
+    private void preencherJtable() {
+        JogadorHumano jH = null;
+        String posicao = "", score = "", email = "";
+        Ranking ranking = Ranking.getInstance();
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Posicao");
+        modelo.addColumn("E-mail");
+        modelo.addColumn("Score");
+
+            for(int i=0; i<ranking.getTamanhoArray(); i++){
+                posicao = String.valueOf(i+1);
+                score = String.valueOf(ranking.getJogadorAtId(i).getScore());
+                jH = (JogadorHumano) ranking.getJogadorAtId(i);
+                email = jH.getEmail();
+
+                modelo.addRow(new String[]{String.valueOf(posicao), email,String.valueOf(score)});
+            }
+
+            tableRanking.setModel(modelo);
     }
 }
