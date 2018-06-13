@@ -150,8 +150,16 @@ public class JanelaCadastro extends JInternalFrame implements ActionListener{
 		email = txtEmail.getText();
 		senha = txtSenha.getText();
 		confirmarSenha = txtConfirmarSenha.getText();
-		
-		if((senha.equals(confirmarSenha))){
+
+		if(email.equals("")){
+			JOptionPane.showMessageDialog(null,"Campo Email está vazio. Por Favor Preencher !!!");
+		}else if(senha.equals("")){
+			JOptionPane.showMessageDialog(null,"Campo Senha está vazio. Por Favor Preencher !!!");
+		}
+		else if(confirmarSenha.equals("")){
+			JOptionPane.showMessageDialog(null,"Campo Confirmar Senha está vazio. Por Favor Preencher !!!");
+		}
+		else if((senha.equals(confirmarSenha))){
 			userSystem = new UserSystem(email, senha);
 			if(listUsuario.addUsuario(userSystem)){
 				limparCampos();
