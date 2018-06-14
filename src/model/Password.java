@@ -28,6 +28,10 @@ public class Password {
         }
     }
 
+    public Password(byte[] senha) {
+        this.senha = senha;
+    }
+
     /**
      * Verifica se a senha passada como par&acirc;metro &eacute; compat&iacute;vel com a senha armazenada nesse objeto.
      * @param senha Uma String contendo a senha que deseja-se verificar.
@@ -54,6 +58,13 @@ public class Password {
 
     @Override
     public String toString() {
-        return String.valueOf(this.senha);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < senha.length; i++) {
+            sb.append(senha[i]);
+            sb.append(",");
+        }
+        sb.deleteCharAt(sb.length()-1);
+
+        return sb.toString();
     }
 }

@@ -10,6 +10,8 @@ public abstract class User {
     private String email = null;
     private Password senha = null;
 
+    public User() { }
+
     /**
      * Construtor base de User, recebe o email e a senha do usuario.
      * @param email Uma String contendo o email do usuario.
@@ -43,6 +45,12 @@ public abstract class User {
      * @param senha Uma String que construir&aacute; a nova senha do usu&aacute;rio.
      */
     public void setSenha(String email, String senha) {
+        if (this.email.equals(email)) {
+            this.senha = new Password(senha);
+        }
+    }
+
+    public void setSenha(String email, byte[] senha) {
         if (this.email.equals(email)) {
             this.senha = new Password(senha);
         }

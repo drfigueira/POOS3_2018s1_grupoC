@@ -58,7 +58,7 @@ public class FileHandler {
     }
 
     public Ranking loadRanking() {
-        Ranking retorno = Ranking.getInstance();
+        Ranking retorno = new Ranking();
         File f = new File(USERS_PATH);
 
         if (f.exists()) {
@@ -88,12 +88,20 @@ public class FileHandler {
     }
 
     private String userToString(UserSystem user) {
-        return user.getEmail() + "-" + user.getSenha();
+        return user.getEmail() + "/" + user.getSenha();
     }
 
     private UserSystem stringToUser(String string) {
-        String[] fields = string.split("-");
-        return new UserSystem(fields[0], fields[1]);
+        String[] fields = string.split("/");
+        UserSystem retorno = new UserSystem(fields[0]);
+
+        String[] bytes = fields[1].split(",");
+        byte[] senha = new byte[bytes.length];
+        for (int i = 0; i < senha.length; i++) {
+            senha[i] = Byte.parseByte(bytes[i]);
+        }
+        retorno.setSenha(fields[0], senha);
+        return retorno;
     }
 
     private String userListToString(UserList list) {

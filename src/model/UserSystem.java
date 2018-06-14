@@ -29,6 +29,11 @@ public class UserSystem extends User {
         contTentativaAcesso = 0;
     }
 
+    public UserSystem(String email) {
+        super();
+        super.setEmail(email);
+    }
+
     /**
      * Método block(); que é chamado quando usuário erra a senha
      * O método verifica se a quantidade de tentativa é igual a 3

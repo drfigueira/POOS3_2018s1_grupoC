@@ -1,5 +1,7 @@
 package model;
 
+import util.FileHandler;
+
 public class Ranking {
     public static int LIMITE = 10;
 
@@ -10,14 +12,15 @@ public class Ranking {
     /**
      * Contrutor de um array de Jogador, com limite de Jogador estipulado em 10
      */
-    private Ranking() {
+    public Ranking() {
         ranking = new Jogador[LIMITE];
         this.qtdJogadores = 0;
     }
 
+
     public static Ranking getInstance(){
         if(instance == null){
-            instance = new Ranking();
+            instance = FileHandler.getInstance().loadRanking();
         }
         return instance;
     }
