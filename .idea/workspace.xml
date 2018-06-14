@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="479a775b-ecb4-42dc-b631-b91aba59adec" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/model/Ranking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/model/Ranking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/ranking.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/ranking.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/util/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/util/FileHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ranking.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ranking.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Ranking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Ranking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JanelaMesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JanelaMesa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/UserSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/JanelaCadastro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JanelaCadastro.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,68 +25,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ranking.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Ranking.java">
+      <file leaf-file-name="UserSystem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/UserSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="123" column="18" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
+            <state relative-caret-position="207">
+              <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JanelaRanking.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/JanelaRanking.java">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JanelaMesa.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/view/JanelaMesa.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="166" column="103" selection-start-line="166" selection-start-column="103" selection-end-line="166" selection-end-column="103" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JanelaHome.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/JanelaHome.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="153" selection-start-line="153" selection-end-line="153" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Jogo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Jogo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
-              <folding>
-                <element signature="e#1262#1263#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/FileHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="87" selection-start-line="87" selection-end-line="87" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JanelaLoginDois.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/JanelaLoginDois.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="118" selection-start-line="118" selection-end-line="118" />
+            <state relative-caret-position="146">
+              <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -101,6 +48,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JanelaCadastro.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/view/JanelaCadastro.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="158" column="114" selection-start-line="158" selection-start-column="114" selection-end-line="158" selection-end-column="114" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,18 +101,18 @@
         <option value="$PROJECT_DIR$/src/util/JSONWrapper.java" />
         <option value="$PROJECT_DIR$/src/view/Principal.java" />
         <option value="$PROJECT_DIR$/src/view/JanelaPrincipal.java" />
-        <option value="$PROJECT_DIR$/src/view/JanelaCadastro.java" />
         <option value="$PROJECT_DIR$/src/model/Password.java" />
         <option value="$PROJECT_DIR$/src/view/JanelaRanking.java" />
         <option value="$PROJECT_DIR$/test/model/PasswordTest.java" />
         <option value="$PROJECT_DIR$/src/model/JogadorHumano.java" />
         <option value="$PROJECT_DIR$/src/model/User.java" />
-        <option value="$PROJECT_DIR$/src/model/UserSystem.java" />
         <option value="$PROJECT_DIR$/resources/ranking.txt" />
         <option value="$PROJECT_DIR$/resources/users.txt" />
         <option value="$PROJECT_DIR$/src/util/FileHandler.java" />
         <option value="$PROJECT_DIR$/src/model/Ranking.java" />
         <option value="$PROJECT_DIR$/src/view/JanelaMesa.java" />
+        <option value="$PROJECT_DIR$/src/model/UserSystem.java" />
+        <option value="$PROJECT_DIR$/src/view/JanelaCadastro.java" />
       </list>
     </option>
   </component>
@@ -331,11 +290,11 @@
       <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="12" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.28617886" />
-      <window_info anchor="bottom" id="Terminal" order="13" weight="0.2540453" />
+      <window_info anchor="bottom" id="Run" order="4" visible="true" weight="0.28617886" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.25365853" />
       <window_info id="Capture Tool" order="11" />
       <window_info id="Designer" order="8" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.20928463" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.20928463" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="12" />
@@ -358,7 +317,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/view/JanelaCadastro.java</url>
-          <line>176</line>
+          <line>181</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
@@ -518,16 +477,6 @@
     <entry file="file://$PROJECT_DIR$/src/util/FileHandler.java" />
     <entry file="file://$PROJECT_DIR$/resources/users.json" />
     <entry file="jar:///opt/java/64/java-8-oracle/src.zip!/javax/swing/JPasswordField.java" />
-    <entry file="file://$PROJECT_DIR$/src/view/JanelaCadastro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Password.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
@@ -591,27 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/UserSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/users.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Jogo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -643,13 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/ranking.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/JanelaRanking.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -668,6 +589,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="166" column="103" selection-start-line="166" selection-start-column="103" selection-end-line="166" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/ranking.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/UserSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/users.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/JanelaCadastro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="158" column="114" selection-start-line="158" selection-start-column="114" selection-end-line="158" selection-end-column="114" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

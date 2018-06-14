@@ -1,2 +1,2 @@
-teste@teste.com:1
-teste2@teste.com:-1
+teste@teste.com:2
+teste2@teste.com:0

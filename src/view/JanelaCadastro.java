@@ -154,7 +154,12 @@ public class JanelaCadastro extends JInternalFrame implements ActionListener{
 
 		if(email.equals("")){
 			JOptionPane.showMessageDialog(null,"Campo Email está vazio. Por Favor Preencher !!!");
-		}else if(senha.equals("")){
+		}
+		else if(!email.matches("[a-zA-Z0-9]+[a-zA-Z0-9_.-]+@{1}[a-zA-Z0-9_.-]*\\.+[a-z]{2,4}")) {
+			JOptionPane.showMessageDialog(null,"Opa! Parece que isso não é um email. Por Favor preencher novamente!!!");
+
+		}
+		else if(senha.equals("")){
 			JOptionPane.showMessageDialog(null,"Campo Senha está vazio. Por Favor Preencher !!!");
 		}
 		else if(confirmarSenha.equals("")){
