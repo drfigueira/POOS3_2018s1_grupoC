@@ -96,4 +96,10 @@ public class UserList {
         return pos < this.qtdUsuarios? usuarios[pos] : null;
     }
 
+    /**
+     * Retorna o tamanho da lista.
+     * @return Um inteiro indicando o tamanho da lista.
+     */
+    public int getSize() { return qtdUsuarios; }
+
 }

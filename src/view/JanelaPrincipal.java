@@ -1,19 +1,14 @@
 package view;
 
 import model.UserList;
-import model.UserSystem;
-import util.JSONWrapper;
+import util.FileHandler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
-import javax.swing.JDesktopPane;
-import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class JanelaPrincipal extends JFrame implements ActionListener{
 	private JMenuBar barra;
@@ -35,16 +30,16 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
 
     private UserList listUsuario;
 
-//    private JSONWrapper jsonWrapper;
+    private FileHandler file;
     
     public JanelaPrincipal(){
     	criaComponentes();
     	ajustaComponentes();
-    	listUsuario = new UserList();
-//        jsonWrapper = new JSONWrapper();
-//        listUsuario = jsonWrapper.loadUsers();
+        file = FileHandler.getInstance();
+        listUsuario = file.loadUsers(); //Carregando list do arquivo.
     }
-    
+
+
     private void criaComponentes(){
     	desktop = new JDesktopPane();
     	barra = new JMenuBar();
@@ -77,14 +72,14 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
     	add(desktop);
     }
     private void ajustaComponentes(){
-    	setTitle("Jogo Domin�");
+    	setTitle("Jogo Dominó");
         setVisible(true);
         setSize(800, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-	
-	
+
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -98,7 +93,7 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null, "Janela de CADASTRO J Aberta !!!");
             } 
 		}else if(opcaoLogin == e.getSource()){
-			//VERIFICA��O SE A JANELA DE LOGIN ESTA ABERTA
+			//VERIFICA SE A JANELA DE LOGIN ESTA ABERTA
 			if(!isVerificarJanelaAtiva(janelaLogin)){
                 System.out.println("Login");
                 janelaLogin = new JanelaLogin(this, listUsuario);

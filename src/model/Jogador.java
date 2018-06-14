@@ -2,8 +2,7 @@ package model;
 
 public abstract class Jogador {
     protected ConjuntoPedra hand;
-    private int contJogoVenceu;
-    private int contJogoPerdeu;
+    private int score = 0;
 
     public Jogador() {
         hand = new ConjuntoPedra();
@@ -81,16 +80,16 @@ public abstract class Jogador {
      * @return Um inteiro contendo o score do Jogador.
      */
     public int getScore() {
-        return contJogoVenceu - contJogoPerdeu;
+        return score;
     }
 
-    public void venceu() {
-        contJogoVenceu++;
-    }
+    public void venceu() { score++; }
 
     public void perdeu() {
-        contJogoPerdeu++;
+        score--;
     }
+
+    public void setScore(int score) { this.score = score; }
 
     /*
     public void setContJogoVenceu(int contJogoVenceu) {

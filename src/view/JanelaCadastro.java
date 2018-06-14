@@ -2,6 +2,7 @@ package view;
 
 import model.UserList;
 import model.UserSystem;
+import util.FileHandler;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -162,6 +163,7 @@ public class JanelaCadastro extends JInternalFrame implements ActionListener{
 		else if((senha.equals(confirmarSenha))){
 			userSystem = new UserSystem(email, senha);
 			if(listUsuario.addUsuario(userSystem)){
+				FileHandler.getInstance().storeUsers(listUsuario);
 				limparCampos();
 				JOptionPane.showMessageDialog(null, "Usuário Cadastrado Com Sucesso !!!");
 				dispose();

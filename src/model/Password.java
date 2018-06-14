@@ -51,4 +51,9 @@ public class Password {
         }
         return retorno;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.senha);
+    }
 }
