@@ -1,6 +1,7 @@
 package view;
 
 import model.*;
+import util.FileHandler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -148,7 +149,9 @@ public class JanelaMesa extends JFrame implements ActionListener {
             Ranking ranking = Ranking.getInstance();
 
             //ADICIONANDO PLAYER NO RANKING
-            ranking.addPlayer(jogo.getDonoDoTurno());
+            if (!ranking.contains(jogo.getDonoDoTurno())) {
+                ranking.addPlayer(jogo.getDonoDoTurno());
+            }
 
             //FAZENDO JOGO RECEBER USUARIO PERDEDOR
             jogo.passaTurno();
@@ -156,8 +159,11 @@ public class JanelaMesa extends JFrame implements ActionListener {
             jogo.getDonoDoTurno().perdeu();
 
             //ADICIONANDO PLAYER NO RANKING
-            ranking.addPlayer(jogo.getDonoDoTurno());
+            if (!ranking.contains(jogo.getDonoDoTurno())) {
+                ranking.addPlayer(jogo.getDonoDoTurno());
+            }
 
+            FileHandler.getInstance().storeRanking(ranking);
             dispose();
         }
         jogo.passaTurno();

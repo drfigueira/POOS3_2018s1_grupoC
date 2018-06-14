@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * &agrave;s necessidades futuras do projeto quando se tratar de usu&aacute;rios do sistema.
  */
 public abstract class User {
-    private String email = null;
+    protected String email = null;
     private Password senha = null;
 
     public User() { }

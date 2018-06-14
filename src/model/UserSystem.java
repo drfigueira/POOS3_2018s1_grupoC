@@ -31,7 +31,8 @@ public class UserSystem extends User {
 
     public UserSystem(String email) {
         super();
-        super.setEmail(email);
+//        super.setEmail(email);
+        this.email = email;
     }
 
     /**

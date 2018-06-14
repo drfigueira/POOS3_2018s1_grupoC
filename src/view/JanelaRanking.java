@@ -4,6 +4,7 @@ import model.Jogador;
 import model.JogadorHumano;
 import model.Ranking;
 import model.UserSystem;
+import util.FileHandler;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -125,6 +126,7 @@ public class JanelaRanking extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == buttonVoltar){
+//            FileHandler.getInstance().storeRanking(Ranking.getInstance());
             dispose();
         }
     }

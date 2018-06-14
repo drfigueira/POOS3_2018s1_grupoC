@@ -59,12 +59,12 @@ public class FileHandler {
 
     public Ranking loadRanking() {
         Ranking retorno = new Ranking();
-        File f = new File(USERS_PATH);
+        File f = new File(RANKING_PATH);
 
         if (f.exists()) {
             if (f.length() > 0) {
                 try {
-                    BufferedReader br = new BufferedReader(new FileReader(USERS_PATH));
+                    BufferedReader br = new BufferedReader(new FileReader(f));
                     String line;
                     while ((line = br.readLine()) != null) {
                         retorno.addPlayer(stringToJogador(line));
@@ -79,7 +79,7 @@ public class FileHandler {
 
     public void storeRanking(Ranking ranking) {
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(USERS_PATH));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(RANKING_PATH));
             bw.write(rankingToString(ranking));
             bw.close();
         } catch (IOException e) {
@@ -114,9 +114,9 @@ public class FileHandler {
     }
 
     private JogadorHumano stringToJogador(String string) {
-        String[] fields = string.split("-");
-        JogadorHumano j = new JogadorHumano(new UserSystem(fields[0], fields[1]));
-        j.setScore(Integer.parseInt(fields[2]));
+        String[] fields = string.split(":");
+        JogadorHumano j = new JogadorHumano(new UserSystem(fields[0]));
+        j.setScore(Integer.parseInt(fields[1]));
         return j;
     }
 
@@ -124,7 +124,11 @@ public class FileHandler {
     private String rankingToString(Ranking ranking) {
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < ranking.getTamanhoArray(); i++) {
-            sb.append(ranking.getJogadorAtId(i));
+            JogadorHumano j = (JogadorHumano) ranking.getJogadorAtId(i);
+            String[] fields = j.toString().trim().split("-");
+            sb.append(fields[0].trim().split(":")[1]);
+            sb.append(":");
+            sb.append(fields[1].trim().split(":")[1]);
             sb.append("\n");
         }
         return sb.toString();
