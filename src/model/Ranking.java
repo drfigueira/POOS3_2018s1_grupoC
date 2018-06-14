@@ -121,6 +121,20 @@ public class Ranking {
         return ranking[pos];
     }
 
+    public Jogador getJogadorByEmail(String email) {
+        Jogador retorno = null;
+        if (email != null) {
+            boolean stop = false;
+            for (int i = 0; i < this.qtdJogadores && !stop; i++) {
+                if (((JogadorHumano) ranking[i]).getEmail().equals(email.trim())) {
+                    stop = true;
+                    retorno = ranking[i];
+                }
+            }
+        }
+        return retorno;
+    }
+
     public boolean contains(Jogador j) {
         boolean retorno = false;
         if (j.getClass().equals(JogadorHumano.class)) {

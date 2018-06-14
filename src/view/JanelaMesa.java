@@ -151,6 +151,8 @@ public class JanelaMesa extends JFrame implements ActionListener {
             //ADICIONANDO PLAYER NO RANKING
             if (!ranking.contains(jogo.getDonoDoTurno())) {
                 ranking.addPlayer(jogo.getDonoDoTurno());
+            } else {
+                ranking.getJogadorByEmail(((JogadorHumano) jogo.getDonoDoTurno()).getEmail()).venceu();
             }
 
             //FAZENDO JOGO RECEBER USUARIO PERDEDOR
@@ -161,6 +163,8 @@ public class JanelaMesa extends JFrame implements ActionListener {
             //ADICIONANDO PLAYER NO RANKING
             if (!ranking.contains(jogo.getDonoDoTurno())) {
                 ranking.addPlayer(jogo.getDonoDoTurno());
+            } else {
+                ranking.getJogadorByEmail(((JogadorHumano) jogo.getDonoDoTurno()).getEmail()).venceu();
             }
 
             FileHandler.getInstance().storeRanking(ranking);

@@ -125,10 +125,14 @@ public class FileHandler {
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < ranking.getTamanhoArray(); i++) {
             JogadorHumano j = (JogadorHumano) ranking.getJogadorAtId(i);
-            String[] fields = j.toString().trim().split("-");
-            sb.append(fields[0].trim().split(":")[1]);
+//            String[] fields = j.toString().trim().split("-");
+//            sb.append(fields[0].trim().split(":")[1]);
+//            sb.append(":");
+//            sb.append(fields[1].trim().split(":")[1]);
+//            sb.append("\n");
+            sb.append(j.getEmail());
             sb.append(":");
-            sb.append(fields[1].trim().split(":")[1]);
+            sb.append(j.getScore());
             sb.append("\n");
         }
         return sb.toString();
