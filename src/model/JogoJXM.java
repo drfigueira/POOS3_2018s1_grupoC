@@ -49,7 +49,8 @@ public class JogoJXM {
         }
 
         donoDoTurno = pos != -1? bot[pos] : jogador;
-        turno = pos;
+//        turno = pos;
+        turno = -1;
     }
 
     public Jogador getJogador() {

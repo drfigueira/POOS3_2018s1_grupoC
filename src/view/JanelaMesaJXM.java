@@ -8,28 +8,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class JanelaMesaJXM extends JFrame implements ActionListener {
-
     private AbstractPanel panel;
-
-//    private JogadorComputadorPanel[] bot;
-
-    private JogadorHumanoPanel panelJogador;
     private AbstractPanel panelBotoes;
     private AbstractPanel mesa;
 
+    private JogadorHumanoPanel panelJogador;
+
     private JLabel labelMesa;
+
     private JButton btnJogar;
     private JButton btnPassar;
 
     private JogoJXM jogo;
 
-//    private Jogador donoDoTurno;
-
-
     public JanelaMesaJXM(JogoJXM jogo) {
         this.jogo = jogo;
-
-        jogo.init();
+        this.jogo.init();
 
         createVisualComponents();
         setProperties();
@@ -54,21 +48,6 @@ public class JanelaMesaJXM extends JFrame implements ActionListener {
         add(panel);
     }
 
-    private void setPanelJogador(Jogador jogador){
-        panelJogador.setJogador((JogadorHumano) jogador);
-        if (!jogo.getJogador().possuiJogada(jogo.getMesa())) {
-            btnJogar.setEnabled(false);
-            btnPassar.setEnabled(true);
-        }else {
-            btnJogar.setEnabled(true);
-            btnPassar.setEnabled(false);
-        }
-    }
-
-    private void atualizarMesa() {
-        labelMesa.setText(jogo.getMesa().toString());
-    }
-
     private void createPanelBotoes() {
         panelBotoes = new AbstractPanel();
 
@@ -86,6 +65,17 @@ public class JanelaMesaJXM extends JFrame implements ActionListener {
         btnPassar.setEnabled(false);
     }
 
+    private void setPanelJogador(Jogador jogador) {
+        panelJogador.setJogador((JogadorHumano) jogador);
+        if (!jogo.getJogador().possuiJogada(jogo.getMesa())) {
+            btnJogar.setEnabled(false);
+            btnPassar.setEnabled(true);
+        }
+        else {
+            btnJogar.setEnabled(true);
+            btnPassar.setEnabled(false);
+        }
+    }
     private void createPanelMesa() {
         mesa = new AbstractPanel();
         labelMesa = new JLabel("Mesa");
@@ -99,30 +89,19 @@ public class JanelaMesaJXM extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == btnJogar) {
-            try {
-                efetuarJogada();
-            } catch (NaoTemJogadaException e1) {
-                e1.printStackTrace();
-            }
-        } else if (e.getSource() == btnPassar) {
+        if (e.getSource() == btnJogar) {
+            efetuarJogada();
             passarTurno();
-            try {
-                jogo.jogarMaquina();
-            } catch (NaoTemJogadaException e1) {
-                e1.printStackTrace();
-            }
-        } else {
-            dispose();
         }
-        btnJogar.setEnabled(panelJogador.possuiJogada(jogo.getMesa()));
-        btnPassar.setEnabled(!panelJogador.possuiJogada(jogo.getMesa()) && jogo.getDomino().isEmpty());
+        else if (e.getSource() == btnPassar){
+            passarTurno();
+        }
     }
 
-    private void efetuarJogada() throws NaoTemJogadaException {
-
+    private void efetuarJogada() {
         Pedra p = panelJogador.getSelectedIndex();
         if (!jogo.getMesa().jogarPedra(p)) {
             JOptionPane.showMessageDialog(this, "Jogada Inválida",
@@ -130,36 +109,29 @@ public class JanelaMesaJXM extends JFrame implements ActionListener {
         }
         else {
             panelJogador.atualizarMao();
-            passarTurno();
-            jogo.jogarMaquina();
         }
     }
 
-    public void passarTurno() {
-        if(jogo.getDonoDoTurno().getHand().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "VITÓRIA", "Jogador " +
-                    ((JogadorHumano) jogo.getJogador()).getEmail(), JOptionPane.INFORMATION_MESSAGE);
-
-            //ADICIONANDO PONTO PARA O VENCEDOR
-            jogo.getDonoDoTurno().venceu();
-            Ranking ranking = Ranking.getInstance();
-
-            //ADICIONANDO PLAYER NO RANKING
-            ranking.addPlayer(jogo.getDonoDoTurno());
-
-            //FAZENDO JOGO RECEBER USUARIO PERDEDOR
-            jogo.passaTurno();
-            //ACRESCENTANDO UMA DERROTA
-            jogo.getDonoDoTurno().perdeu();
-
-            //ADICIONANDO PLAYER NO RANKING
-            ranking.addPlayer(jogo.getDonoDoTurno());
-
-            dispose();
-        }
+    private void passarTurno() {
         jogo.passaTurno();
-//        setPanelJogador(jogo.getDonoDoTurno());
-        atualizarMesa();
+        do {
+            try {
+                Pedra p = jogo.jogarMaquina();
+                jogo.getMesa().jogarPedra(p);
+                atualizarMesa();
+                JOptionPane.showMessageDialog(this, "Joguei a pedra " + p + "\nEstou com " +
+                        jogo.getDonoDoTurno().getHand().getSize() + "pedras.",
+                        "Bot " + (jogo.getTurno() + 1), JOptionPane.INFORMATION_MESSAGE);
+            } catch (NaoTemJogadaException e) {
+                JOptionPane.showMessageDialog(this, "Não tenho jogada a fazer :(\nEstou com " +
+                        jogo.getDonoDoTurno().getHand().getSize() + " pedras.",
+                        "Bot " + (jogo.getTurno()+1) + "diz: ", JOptionPane.INFORMATION_MESSAGE);
+            }
+            jogo.passaTurno();
+        } while(jogo.getTurno() != -1);
     }
 
+    private void atualizarMesa() {
+        labelMesa.setText(jogo.getMesa().toString());
+    }
 }
