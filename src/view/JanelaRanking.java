@@ -81,14 +81,14 @@ public class JanelaRanking extends JFrame implements ActionListener {
     }
 
     private void inserirComponentesNaJanela(){
-        adicionaComponentes(painelLabelMensagem, labelMensagem, 0, 0, GridBagConstraints.CENTER, 1, 1, GridBagConstraints.BOTH);
+        adicionaComponentes(painelLabelMensagem, labelMensagem, 0, 0, GridBagConstraints.CENTER, 1, 1, GridBagConstraints.NONE);
         adicionaComponentes(painelTable, scrollTable, 0, 0, GridBagConstraints.WEST, 1, 1, GridBagConstraints.BOTH);
-        adicionaComponentes(painelButton, buttonVoltar, 0, 0, GridBagConstraints.WEST, 1, 1, GridBagConstraints.BOTH);
+        adicionaComponentes(painelButton, buttonVoltar, 0, 0, GridBagConstraints.WEST, 1, 1, GridBagConstraints.NONE);
 
 
-        adicionaComponentes(this, painelLabelMensagem, 0, 0, GridBagConstraints.CENTER, 1, 1, GridBagConstraints.BOTH);
+        adicionaComponentes(this, painelLabelMensagem, 0, 0, GridBagConstraints.CENTER, 1, 1, GridBagConstraints.NONE);
         adicionaComponentes(this, painelTable, 1, 0, GridBagConstraints.CENTER, 1, 1, GridBagConstraints.BOTH);
-        adicionaComponentes(this, painelButton, 2, 0, GridBagConstraints.CENTER, 1, 1, GridBagConstraints.BOTH);
+        adicionaComponentes(this, painelButton, 2, 0, GridBagConstraints.CENTER, 1, 1, GridBagConstraints.NONE);
     }
 
     private void adicionaComponentes(Container container, JComponent component, int linha, int coluna, int posicao, int largura, int altura, int preenche){
@@ -118,8 +118,9 @@ public class JanelaRanking extends JFrame implements ActionListener {
     private void ajustaComponentes(){
         setTitle("Home");
         setVisible(true);
-        //setSize(550, 300);
-        pack();
+        setSize(400, 600);
+        //pack();
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
     }
 

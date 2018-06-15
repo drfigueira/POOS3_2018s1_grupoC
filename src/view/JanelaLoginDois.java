@@ -110,6 +110,7 @@ public class JanelaLoginDois  extends JFrame implements ActionListener {
         setTitle("Janela de Login");
         setVisible(true);
         setSize(400, 200);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
     }
 
@@ -138,7 +139,7 @@ public class JanelaLoginDois  extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null, "Seja bem vindo " + email);
             Jogo jogo = new Jogo(jH1, jH2);
 
-            new JanelaMesa(jogo);
+            new JanelaMesa(jogo, listUsuario, email);
             dispose();
         }else if(retorno == 0){
             JOptionPane.showMessageDialog(null, "Jogador já está ONLINE " + email);
