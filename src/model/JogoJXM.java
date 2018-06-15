@@ -76,7 +76,7 @@ public class JogoJXM {
     public Pedra jogarMaquina() throws NaoTemJogadaException {
         Pedra p = null;
         if(!bot[turno].possuiJogada(mesa)) {
-            passaTurno();
+            throw new NaoTemJogadaException();
         }else {
             p = bot[turno].jogar(mesa);
         }

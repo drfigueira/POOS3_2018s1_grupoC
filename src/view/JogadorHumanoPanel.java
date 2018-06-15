@@ -64,6 +64,8 @@ public class JogadorHumanoPanel extends AbstractPanel {
 
     public void atualizarMao() {
         jogador.getHand().removePedra(mao.getSelectedIndex());
+        mao.removeAllItems();
+        addComboBoxItems();
     }
 
 }
