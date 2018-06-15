@@ -30,11 +30,11 @@ public class JogadorComputador extends Jogador {
                 int value = 0;
                 if (p.pedraValida(m.getPontaEsquerda()) || p.pedraValida(m.getPontaEsquerda())) {
                     value++;
+                    if (p.isBucha()) {
+                        value++;
+                    }
+                    value += naoFecha(i);
                 }
-                if (p.isBucha()) {
-                    value++;
-                }
-                value += naoFecha(i);
 
                 if (value > maiorValue) {
                     maiorValue = value;
@@ -77,6 +77,8 @@ public class JogadorComputador extends Jogador {
         if (index == -1) {
             throw new NaoTemJogadaException();
         }
-        return this.jogar(index);
+        Pedra p = this.jogar(index);
+        this.hand.removePedra(index);
+        return p;
     }
 }

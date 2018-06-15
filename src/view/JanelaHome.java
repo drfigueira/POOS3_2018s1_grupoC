@@ -1,9 +1,6 @@
 package view;
 
-import model.JogadorHumano;
-import model.Jogo;
-import model.UserList;
-import model.UserSystem;
+import model.*;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -32,6 +29,7 @@ public class JanelaHome extends JFrame implements ActionListener {
 
     JanelaRanking janelaRanking;
     JanelaLoginDois janelaLoginDois;
+    private JanelaMesaJXM jogadorVsMaquina;
 
 
     private String email;
@@ -144,6 +142,7 @@ public class JanelaHome extends JFrame implements ActionListener {
 
         }else if(e.getSource() == buttonJogadorVsMaquina){
             JOptionPane.showMessageDialog(null, "Você Escolheu Jogar Contra Máquina !!!");
+            jogadorVsMaquina = new JanelaMesaJXM(new JogoJXM(new JogadorHumano(listUsuario.getUsuario(email))));
         }else if(e.getSource() == buttonRanking){
             JOptionPane.showMessageDialog(null, "Você Escolheu Ranking !!!");
             janelaRanking = new JanelaRanking();
