@@ -132,6 +132,7 @@ public class JanelaHome extends JFrame implements ActionListener {
         setVisible(true);
         //setSize(550, 300);
         pack();
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
     }
 
