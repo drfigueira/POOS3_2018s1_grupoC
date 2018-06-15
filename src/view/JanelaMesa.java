@@ -24,12 +24,16 @@ public class JanelaMesa extends JFrame implements ActionListener {
     private JButton btnPassar;
 
     private Jogo jogo;
+    private UserList listUser;
+    private UserSystem user;
 
 
-    public JanelaMesa(Jogo jogo) {
+    public JanelaMesa(Jogo jogo, UserList listUser, String email) {
         this.jogo = jogo;
+        this.listUser = listUser;
         jogo.init();
 
+        user = listUser.getUsuario(email);
         createVisualComponents();
         setProperties();
     }
@@ -70,7 +74,9 @@ public class JanelaMesa extends JFrame implements ActionListener {
     }
 
     private void atualizarMesa() {
+
         labelMesa.setText(jogo.getMesa().toString());
+        pack();
     }
     private void createPanelBotoes() {
         panelBotoes = new AbstractPanel();
@@ -103,6 +109,8 @@ public class JanelaMesa extends JFrame implements ActionListener {
     private void setProperties() {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         pack();
+        //setSize(700, 1000);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -167,6 +175,7 @@ public class JanelaMesa extends JFrame implements ActionListener {
                 ranking.getJogadorByEmail(((JogadorHumano) jogo.getDonoDoTurno()).getEmail()).venceu();
             }
 
+            user.setOnline(false);
             FileHandler.getInstance().storeRanking(ranking);
             dispose();
         }
