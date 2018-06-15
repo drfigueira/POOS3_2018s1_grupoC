@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="POOS3_2018s1_grupoC:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="479a775b-ecb4-42dc-b631-b91aba59adec" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/ranking.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/ranking.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaHome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaLoginDois.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaLoginDois.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaMesa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaMesa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaMesaJXM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaMesaJXM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaRanking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaRanking.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/ranking.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ranking.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Domino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Domino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Jogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Jogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/JogoJXM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/JogoJXM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/PasswordTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/UserListTest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,66 +23,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JanelaMesa.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/JanelaMesa.java">
+      <file leaf-file-name="users.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/users.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Domino.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Domino.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConjuntoPedra.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/ConjuntoPedra.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="e#275#276#0" expanded="true" />
-                <element signature="e#313#314#0" expanded="true" />
-                <element signature="e#354#355#0" expanded="true" />
-                <element signature="e#405#406#0" expanded="true" />
-                <element signature="e#446#447#0" expanded="true" />
-                <element signature="e#512#513#0" expanded="true" />
-                <element signature="e#547#548#0" expanded="true" />
-                <element signature="e#611#612#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Jogo.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/Jogo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-              <folding>
-                <element signature="e#1228#1229#0" expanded="true" />
-                <element signature="e#1262#1263#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JogoJXM.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/JogoJXM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-            </state>
-          </provider>
+      <file leaf-file-name="ranking.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/ranking.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -129,8 +80,6 @@
         <option value="$PROJECT_DIR$/test/model/PasswordTest.java" />
         <option value="$PROJECT_DIR$/src/model/JogadorHumano.java" />
         <option value="$PROJECT_DIR$/src/model/User.java" />
-        <option value="$PROJECT_DIR$/resources/ranking.txt" />
-        <option value="$PROJECT_DIR$/resources/users.txt" />
         <option value="$PROJECT_DIR$/src/util/FileHandler.java" />
         <option value="$PROJECT_DIR$/src/model/Ranking.java" />
         <option value="$PROJECT_DIR$/src/view/JanelaMesa.java" />
@@ -144,6 +93,8 @@
         <option value="$PROJECT_DIR$/src/model/Domino.java" />
         <option value="$PROJECT_DIR$/src/model/JogoJXM.java" />
         <option value="$PROJECT_DIR$/src/model/Jogo.java" />
+        <option value="$PROJECT_DIR$/resources/ranking.txt" />
+        <option value="$PROJECT_DIR$/resources/users.txt" />
       </list>
     </option>
   </component>
@@ -176,24 +127,6 @@
               <item name="POOS3_2018s1_grupoC" type="b2602c69:ProjectViewProjectNode" />
               <item name="POOS3_2018s1_grupoC" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="POOS3_2018s1_grupoC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="POOS3_2018s1_grupoC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="POOS3_2018s1_grupoC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="POOS3_2018s1_grupoC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="POOS3_2018s1_grupoC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="POOS3_2018s1_grupoC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -489,13 +422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/ranking.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/UserSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -524,13 +450,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2055">
           <caret line="143" selection-start-line="143" selection-end-line="143" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/users.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -660,6 +579,16 @@
             <element signature="e#1228#1229#0" expanded="true" />
             <element signature="e#1262#1263#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/ranking.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/users.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>

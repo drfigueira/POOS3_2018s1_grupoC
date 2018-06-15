@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: /home/leorossi/Documentos/POOS3/POOS3_2018s1_grupoC/src/vi
+ ew/Principal.java
+
