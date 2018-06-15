@@ -12,7 +12,7 @@ public class Jogo {
         this.jogador1 = jogador1;
         this.jogador2 = jogador2;
         mesa = new Mesa();
-        domino= Domino.getInstance();
+        domino= new Domino();
         turno = 0;
     }
 

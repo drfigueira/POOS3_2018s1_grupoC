@@ -4,7 +4,7 @@ public class Domino extends ConjuntoPedra {
     private static int LIMITE = 7;
     private static Domino instance;
 
-    private Domino() {
+    public Domino() {
         criaPedras();
         embaralharPedras();
     }

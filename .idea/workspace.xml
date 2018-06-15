@@ -3,11 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="479a775b-ecb4-42dc-b631-b91aba59adec" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/ranking.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/ranking.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaHome.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaLoginDois.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaLoginDois.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaMesa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaMesa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaMesaJXM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaMesaJXM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaRanking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POOS3_2018s1_grupoC/view/JanelaRanking.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/ranking.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ranking.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/JogadorComputador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/JogadorComputador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Domino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Domino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Jogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Jogo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/JogoJXM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/JogoJXM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JanelaMesaJXM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JanelaMesaJXM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JogadorHumanoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JogadorHumanoPanel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,39 +24,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JogoJXM.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/JogoJXM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="78" column="46" selection-start-line="78" selection-start-column="46" selection-end-line="78" selection-end-column="46" />
-              <folding>
-                <element signature="e#1428#1429#0" expanded="true" />
-                <element signature="e#1455#1456#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JanelaMesaJXM.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/view/JanelaMesaJXM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="118" column="63" lean-forward="true" selection-start-line="118" selection-start-column="63" selection-end-line="118" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="JanelaMesa.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/JanelaMesa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="155" selection-end-column="13" />
+            <state relative-caret-position="296">
+              <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Domino.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Domino.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConjuntoPedra.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ConjuntoPedra.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <element signature="e#275#276#0" expanded="true" />
+                <element signature="e#313#314#0" expanded="true" />
+                <element signature="e#354#355#0" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#512#513#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Jogo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/Jogo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+              <folding>
+                <element signature="e#1228#1229#0" expanded="true" />
+                <element signature="e#1262#1263#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JogoJXM.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/JogoJXM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -83,7 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/model/Jogo.java" />
         <option value="$PROJECT_DIR$/src/view/AbstractPanel.java" />
         <option value="$PROJECT_DIR$/src/view/Main.java" />
         <option value="$PROJECT_DIR$/src/model/ConjuntoPedra.java" />
@@ -111,8 +140,10 @@
         <option value="$PROJECT_DIR$/src/view/JogadorHumanoPanel.java" />
         <option value="$PROJECT_DIR$/src/model/Jogador.java" />
         <option value="$PROJECT_DIR$/src/model/JogadorComputador.java" />
-        <option value="$PROJECT_DIR$/src/model/JogoJXM.java" />
         <option value="$PROJECT_DIR$/src/view/JanelaMesaJXM.java" />
+        <option value="$PROJECT_DIR$/src/model/Domino.java" />
+        <option value="$PROJECT_DIR$/src/model/JogoJXM.java" />
+        <option value="$PROJECT_DIR$/src/model/Jogo.java" />
       </list>
     </option>
   </component>
@@ -290,26 +321,46 @@
       <window_info anchor="right" id="Palette&#9;" order="11" />
       <window_info id="Image Layers" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.5007576" side_tool="true" weight="0.2524272" />
       <window_info anchor="right" id="Maven Projects" order="12" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.28478965" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.28478965" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="bottom" id="Terminal" order="13" weight="0.2524272" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.49924242" visible="true" weight="0.2524272" />
       <window_info id="Capture Tool" order="11" />
       <window_info id="Designer" order="8" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.2128788" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.2128788" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="12" />
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.39644012" />
       <window_info id="Favorites" order="9" side_tool="true" />
+      <window_info anchor="right" id="Palette" order="8" />
+      <window_info id="Designer" order="8" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="9" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.2524272" />
+      <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info id="Favorites" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.28478965" />
+      <window_info id="Image Layers" order="10" />
+      <window_info id="Capture Tool" order="11" />
+      <window_info id="UI Designer" order="12" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.39644012" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="Palette&#9;" order="11" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="16" weight="0.32524273" />
+      <window_info anchor="right" id="Maven Projects" order="12" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.2128788" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -332,20 +383,11 @@
           </properties>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/model/JogoJXM.java</url>
-          <line>75</line>
-          <properties class="model.JogoJXM" method="jogarMaquina">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/view/JanelaMesa.java" />
     <entry file="file://$PROJECT_DIR$/src/view/JogadorHumanoPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/view/JanelaMesa.java" />
     <entry file="file://$PROJECT_DIR$/src/model/Jogador.java">
@@ -437,13 +479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="16" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Jogo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
@@ -561,23 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ConjuntoPedra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding>
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Jogador.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -592,33 +610,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/JogoJXM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="78" column="46" selection-start-line="78" selection-start-column="46" selection-end-line="78" selection-end-column="46" />
-          <folding>
-            <element signature="e#1428#1429#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/JanelaMesa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="155" selection-end-column="13" />
+        <state relative-caret-position="296">
+          <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/JanelaMesaJXM.java">
+    <entry file="file://$PROJECT_DIR$/src/view/JanelaMesaJXM.java" />
+    <entry file="file://$PROJECT_DIR$/src/model/ConjuntoPedra.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="118" column="63" lean-forward="true" selection-start-line="118" selection-start-column="63" selection-end-line="118" selection-end-column="63" />
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#275#276#0" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Domino.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/JogoJXM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Jogo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding>
+            <element signature="e#1228#1229#0" expanded="true" />
+            <element signature="e#1262#1263#0" expanded="true" />
           </folding>
         </state>
       </provider>

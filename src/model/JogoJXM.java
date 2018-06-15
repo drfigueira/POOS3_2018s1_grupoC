@@ -13,7 +13,7 @@ public class JogoJXM {
     public JogoJXM(JogadorHumano jogador) {
         bot = new JogadorComputador[3];
         this.jogador = jogador;
-        domino= Domino.getInstance();
+        domino= new Domino();
         mesa = new Mesa();
         carregarMaquinas();
 
