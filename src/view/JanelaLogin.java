@@ -145,6 +145,8 @@ public class JanelaLogin extends JInternalFrame implements ActionListener{
             JOptionPane.showMessageDialog(null, "Usuário Bloqueado. Por favor aguarde 2 horas do bloqueio e tente novamente !!!");
         }else if(retorno == 2){
             JOptionPane.showMessageDialog(null, "Senha Inválida !!!");
+        }else if(retorno == 0){
+            JOptionPane.showMessageDialog(null, "Insira um usuário válido !!!");
         }
     }
 
