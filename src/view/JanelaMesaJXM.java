@@ -92,6 +92,7 @@ public class JanelaMesaJXM extends JFrame implements ActionListener {
     private void setProperties() {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         pack();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -143,6 +144,7 @@ public class JanelaMesaJXM extends JFrame implements ActionListener {
 
     private void atualizarMesa() {
         labelMesa.setText(jogo.getMesa().toString());
+        pack();
     }
 
     private void checarCondicaoDeVitoria(Jogador j) {
